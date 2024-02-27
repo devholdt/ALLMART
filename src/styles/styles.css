@@ -5,10 +5,18 @@ body {
 }
 
 body {
-	display: flex;
-	flex-direction: column;
 	font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Oxygen", "Ubuntu",
 		"Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
