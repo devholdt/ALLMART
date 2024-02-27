@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FooterElement = styled.footer`
+export const Container = styled.footer`
 	padding: 1rem;
 	z-index: 100;
 	color: #fff;

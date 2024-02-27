@@ -4,10 +4,10 @@ import * as S from "./styles";
 
 function Header() {
 	return (
-		<S.HeaderElement>
+		<S.Container>
 			<div>ALLMART</div>
 			<Nav />
-		</S.HeaderElement>
+		</S.Container>
 	);
 }
 

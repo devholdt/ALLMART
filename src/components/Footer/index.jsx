@@ -3,9 +3,9 @@ import * as S from "./styles";
 
 function Footer() {
 	return (
-		<S.FooterElement>
+		<S.Container>
 			<div>©2024 Allmart</div>
-		</S.FooterElement>
+		</S.Container>
 	);
 }
 
