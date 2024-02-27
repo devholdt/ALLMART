@@ -24,7 +24,8 @@ function Products() {
 				{data.map((product) => (
 					<S.ProductCard key={product.id}>
 						<S.ProductTitle>
-							<Link to={`/product/${product.id}`}>{product.title}</Link>
+							<h3>{product.title}</h3>
+							<Link to={`/product/${product.id}`}>view</Link>
 						</S.ProductTitle>
 						<div>
 							{product.tags.map((tag) => {

@@ -23,14 +23,25 @@ export const ProductCard = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	border: 1px solid black;
+	border-radius: 8px;
+	background-color: #1c1c1c;
+	box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.1);
 	padding: 0 1em;
 `;
 
-export const ProductTitle = styled.h3`
+export const ProductTitle = styled.div`
+	display: flex;
+	justify-content: space-between;
+	margin: 0.5em 0;
+
+	h3 {
+		margin: 0;
+	}
+
 	a {
-		color: #1c1c1c;
-		text-decoration: none;
+		color: #c9f66f;
+		font-style: italic;
+		margin-left: 1em;
 	}
 `;
 

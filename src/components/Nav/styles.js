@@ -11,7 +11,6 @@ export const List = styled.ul`
 
 export const Item = styled.li`
 	a {
-		text-decoration: none;
 		color: #fff;
 	}
 `;

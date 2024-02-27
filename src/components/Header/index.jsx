@@ -8,7 +8,7 @@ function Header() {
 	return (
 		<S.Container>
 			<Link to="/">
-				<Logo color="white" size="150px" />
+				<Logo color="green" size="150px" />
 			</Link>
 			<Nav />
 		</S.Container>

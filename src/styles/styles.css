@@ -5,6 +5,8 @@ body {
 
 body {
 	margin: 0;
+	background-color: #252525;
+	color: #fff;
 	font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Oxygen", "Ubuntu",
 		"Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
