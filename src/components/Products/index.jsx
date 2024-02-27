@@ -30,12 +30,13 @@ function Products() {
 						<div>
 							{product.tags.map((tag) => {
 								return (
-									<span key={tag} className="product-tag">
-										{tag}
-									</span>
+									<S.ProductTag key={tag} className="product-tag">
+										{tag}{" "}
+									</S.ProductTag>
 								);
 							})}
 						</div>
+
 						<S.ProductImage src={product.image.url} alt={product.title} />
 						{product.description}
 						<S.ProductRating>

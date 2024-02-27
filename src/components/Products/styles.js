@@ -32,7 +32,7 @@ export const ProductCard = styled.div`
 export const ProductTitle = styled.div`
 	display: flex;
 	justify-content: space-between;
-	margin: 0.5em 0;
+	margin: 1em 0 0.5em;
 
 	h3 {
 		margin: 0;
@@ -41,14 +41,22 @@ export const ProductTitle = styled.div`
 	a {
 		color: #c9f66f;
 		font-style: italic;
-		margin-left: 1em;
+		margin-left: 4px;
 	}
+`;
+
+export const ProductTag = styled.span`
+	background-color: #c9f66f;
+	color: #1c1c1c;
+	padding: 1px 8px 3px;
+	border-radius: 8px;
+	margin-right: 0.5em;
 `;
 
 export const ProductImage = styled.img`
 	height: 100px;
 	object-fit: cover;
-	margin-top: 0.5em;
+	margin: 1em 0;
 
 	@media (max-width: 440px) {
 		height: 200px;
