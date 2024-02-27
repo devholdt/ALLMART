@@ -1,12 +1,13 @@
 import React from "react";
 import { useApi } from "../../hooks/useApi";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import * as S from "./styles";
 
 function Products() {
 	const url = "https://v2.api.noroff.dev/online-shop";
 	const { data, isLoading, isError } = useApi(url);
-	const dispatch = useDispatch();
+	// const dispatch = useDispatch();
 
 	if (isLoading) {
 		return <p>Loading...</p>;
@@ -19,28 +20,40 @@ function Products() {
 	return (
 		<div>
 			<h2>Products</h2>
-			<div>
+			<S.Container>
 				{data.map((product) => (
-					<div key={product.id}>
+					<S.ProductCard key={product.id}>
+						<S.ProductTitle>
+							<Link to={`/product/${product.id}`}>{product.title}</Link>
+						</S.ProductTitle>
 						<div>
-							<h3>{product.title}</h3>
-							<Link to={`/product/${product.id}`}>View</Link>
+							{product.tags.map((tag) => {
+								return (
+									<span key={tag} className="product-tag">
+										{tag}
+									</span>
+								);
+							})}
 						</div>
-						<p>{product.description}</p>
-						<p>{product.price} NOK</p>
-						<button
-							onClick={() => {
-								dispatch({
-									type: "ADD_TO_CART",
-									payload: product,
-								});
-							}}
-						>
-							Add to cart
-						</button>
-					</div>
+						<S.ProductImage src={product.image.url} alt={product.title} />
+						{product.description}
+						<S.ProductRating>
+							{/* <p>
+								<StarsDisplay rating={product.rating} />
+							</p> */}
+							<span>Rating: {product.rating}</span>
+							<span>{product.reviews.length} review(s)</span>
+						</S.ProductRating>
+						<S.ProductBottom>
+							<p>{product.price}kr</p>
+							<button>Add to cart</button>
+							{/* <button onClick={() => dispatch(addToCart(product))}>
+								Add to cart
+							</button>{" "} */}
+						</S.ProductBottom>
+					</S.ProductCard>
 				))}
-			</div>
+			</S.Container>
 		</div>
 	);
 }
