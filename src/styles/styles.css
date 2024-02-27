@@ -13,6 +13,10 @@ body {
 
 main {
 	flex: 1 0 auto;
+	padding: 0 1em;
+	margin: auto;
+	max-width: 1280px;
+	width: 90%;
 }
 
 #root {
