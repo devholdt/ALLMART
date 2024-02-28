@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: repeat(4, 1fr);
 	gap: 1em;
 
 	@media (max-width: 1280px) {
@@ -29,10 +29,17 @@ export const ProductCard = styled.div`
 	padding: 0 1em;
 `;
 
+export const ProductTop = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+`;
+
 export const ProductTitle = styled.div`
 	display: flex;
 	justify-content: space-between;
-	margin: 1em 0 0.5em;
+	margin-top: 1em;
+	margin-bottom: 0.2em;
 
 	h3 {
 		margin: 0;
@@ -41,26 +48,62 @@ export const ProductTitle = styled.div`
 	a {
 		color: #c9f66f;
 		font-style: italic;
+		text-decoration: none;
 		margin-left: 4px;
 	}
 `;
 
+export const ProductTags = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+`;
+
 export const ProductTag = styled.span`
+	font-size: 0.8em;
 	background-color: #c9f66f;
 	color: #1c1c1c;
-	padding: 1px 8px 3px;
-	border-radius: 8px;
-	margin-right: 0.5em;
+	padding: 1px 6px 2px;
+	border-radius: 6px;
 `;
 
 export const ProductImage = styled.img`
 	height: 100px;
+	width: 100%;
 	object-fit: cover;
 	margin: 1em 0;
 
-	@media (max-width: 440px) {
+	@media (max-width: 1280px) {
 		height: 200px;
 	}
+`;
+
+export const ProductDescription = styled.p`
+	width: 100%;
+	margin: 0;
+
+	button {
+		display: block;
+		margin-top: 0.2em;
+		margin-left: 50%;
+		float: right;
+		border: none;
+		background-color: transparent;
+		color: #c9f66f;
+		padding: 0;
+		font-size: 1em;
+		text-transform: lowercase;
+		font-style: italic;
+		cursor: pointer;
+	}
+`;
+
+export const ProductBottom = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 0.5em;
+	margin: 1em 0;
 `;
 
 export const ProductRating = styled.div`
@@ -69,7 +112,7 @@ export const ProductRating = styled.div`
 	gap: 0.5em;
 `;
 
-export const ProductBottom = styled.div`
+export const ProductPrice = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;

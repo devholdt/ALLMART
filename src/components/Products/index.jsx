@@ -23,35 +23,40 @@ function Products() {
 			<S.Container>
 				{data.map((product) => (
 					<S.ProductCard key={product.id}>
-						<S.ProductTitle>
-							<h3>{product.title}</h3>
-							<Link to={`/product/${product.id}`}>view</Link>
-						</S.ProductTitle>
-						<div>
-							{product.tags.map((tag) => {
-								return (
-									<S.ProductTag key={tag} className="product-tag">
-										{tag}{" "}
-									</S.ProductTag>
-								);
-							})}
-						</div>
+						<S.ProductTop>
+							<S.ProductTitle>
+								<h3>{product.title}</h3>
+								<Link to={`/product/${product.id}`}>view</Link>
+							</S.ProductTitle>
+							<S.ProductTags>
+								{product.tags.map((tag) => {
+									return (
+										<S.ProductTag key={tag} className="product-tag">
+											{tag}{" "}
+										</S.ProductTag>
+									);
+								})}
+							</S.ProductTags>
+							<S.ProductImage src={product.image.url} alt={product.title} />
+						</S.ProductTop>
 
-						<S.ProductImage src={product.image.url} alt={product.title} />
-						{product.description}
-						<S.ProductRating>
-							{/* <p>
+						<S.ProductDescription>{product.description}</S.ProductDescription>
+
+						<S.ProductBottom>
+							<S.ProductRating>
+								{/* <p>
 								<StarsDisplay rating={product.rating} />
 							</p> */}
-							<span>Rating: {product.rating}</span>
-							<span>{product.reviews.length} review(s)</span>
-						</S.ProductRating>
-						<S.ProductBottom>
-							<p>{product.price}kr</p>
-							<button>Add to cart</button>
-							{/* <button onClick={() => dispatch(addToCart(product))}>
+								<span>Rating: {product.rating}</span>
+								<span>{product.reviews.length} review(s)</span>
+							</S.ProductRating>
+							<S.ProductPrice>
+								<span>{product.price}kr</span>
+								<button>Add to cart</button>
+								{/* <button onClick={() => dispatch(addToCart(product))}>
 								Add to cart
 							</button>{" "} */}
+							</S.ProductPrice>
 						</S.ProductBottom>
 					</S.ProductCard>
 				))}
