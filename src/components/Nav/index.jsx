@@ -1,6 +1,5 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import Icon from "../Icon";
 import { useSelector } from "react-redux";
 import { selectCartItemCount } from "../Cart/cartSlice";
 import { Link } from "react-router-dom";
@@ -21,10 +20,7 @@ function Nav() {
 				<S.Item>
 					<Link to="/cart">
 						<S.CartIcon>
-							<FontAwesomeIcon
-								icon={faShoppingCart}
-								style={{ color: "#1c1c1c" }}
-							/>
+							<Icon iconName="cart" color="#1c1c1c" />
 							<S.CartCounter>{cartCount}</S.CartCounter>
 						</S.CartIcon>
 					</Link>

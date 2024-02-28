@@ -1,3 +1,11 @@
+:root {
+	--primary-color: #c9f66f;
+	--black-color: #1c1c1c;
+	--dark-color: #252525;
+	--white-color: #ffffff;
+	--red-color: #e94e77;
+}
+
 html,
 body {
 	height: 100%;
@@ -5,8 +13,8 @@ body {
 
 body {
 	margin: 0;
-	background-color: #252525;
-	color: #fff;
+	background-color: var(--dark-color);
+	color: var(--white-color);
 	font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Oxygen", "Ubuntu",
 		"Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;

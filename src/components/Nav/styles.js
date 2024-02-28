@@ -16,6 +16,14 @@ export const Item = styled.li`
 		text-decoration: none;
 		color: ${(props) => props.theme.colors.white};
 	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	div:hover {
+		box-shadow: 0 0 5px ${(props) => props.theme.colors.primary};
+	}
 `;
 
 export const CartIcon = styled.div`

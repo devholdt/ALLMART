@@ -120,4 +120,21 @@ export const ProductPrice = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: none;
+		background-color: ${(props) => props.theme.colors.primary};
+		width: 33px;
+		height: 33px;
+		font-size: 1em;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+
+	button:hover {
+		box-shadow: 0 0 5px ${(props) => props.theme.colors.primary};
+	}
 `;

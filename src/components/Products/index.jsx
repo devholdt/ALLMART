@@ -3,7 +3,8 @@ import { useApi } from "../../hooks/useApi";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Cart/cartSlice";
 import { Link } from "react-router-dom";
-import StarsDisplay from "../StarsDisplay";
+import Icon from "../Icon";
+import Rating from "../Rating";
 import * as S from "./styles";
 
 function Products() {
@@ -47,14 +48,14 @@ function Products() {
 						<S.ProductBottom>
 							<S.ProductRating>
 								<span>
-									<StarsDisplay rating={product.rating} />
+									<Rating rating={product.rating} />
 								</span>
 								<span>{product.reviews.length} review(s)</span>
 							</S.ProductRating>
 							<S.ProductPrice>
 								<span>{product.price}kr</span>
 								<button onClick={() => dispatch(addToCart(product))}>
-									Add to cart
+									<Icon iconName="add" color="#1c1c1c" />
 								</button>{" "}
 							</S.ProductPrice>
 						</S.ProductBottom>
