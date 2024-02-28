@@ -2,6 +2,8 @@ import React from "react";
 import { useApi } from "../../hooks/useApi";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Cart/cartSlice";
+import { ToastContainer, toast, Zoom } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import Icon from "../Icon";
 import Rating from "../Rating";
@@ -54,13 +56,32 @@ function Products() {
 							</S.ProductRating>
 							<S.ProductPrice>
 								<span>{product.price}kr</span>
-								<button onClick={() => dispatch(addToCart(product))}>
+								<button
+									onClick={() => {
+										dispatch(addToCart(product));
+										toast.success(`${product.title} added to cart!`, {
+											position: "bottom-right",
+											autoClose: 1000,
+											hideProgressBar: true,
+											closeOnClick: true,
+											pauseOnHover: false,
+											draggable: true,
+											progress: undefined,
+											icon: () => <Icon iconName="check" color="#c9f66f" />,
+										});
+									}}
+								>
 									<Icon iconName="add" color="#1c1c1c" />
-								</button>{" "}
+								</button>
 							</S.ProductPrice>
 						</S.ProductBottom>
 					</S.ProductCard>
 				))}
+				<S.StyledToast
+					pauseOnFocusLoss={false}
+					closeButton={<Icon iconName="close" color="#fff" />}
+					transition={Zoom}
+				/>
 			</S.Container>
 		</div>
 	);

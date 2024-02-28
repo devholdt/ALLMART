@@ -15,6 +15,8 @@ import {
 	faCartPlus,
 	faTrashAlt,
 	faMinusCircle,
+	faCheck,
+	faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -25,7 +27,9 @@ library.add(
 	faArrowLeft,
 	faCartPlus,
 	faTrashAlt,
-	faMinusCircle
+	faMinusCircle,
+	faCheck,
+	faTimes
 );
 
 const Icon = ({ iconName, color = "black", ...props }) => {
@@ -41,6 +45,8 @@ const Icon = ({ iconName, color = "black", ...props }) => {
 		halfStar: halfStar,
 		emptyStar: emptyStar,
 		remove: faMinusCircle,
+		check: faCheck,
+		close: faTimes,
 	};
 
 	const icon = iconMap[iconName];

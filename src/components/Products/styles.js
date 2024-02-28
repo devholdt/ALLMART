@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ToastContainer } from "react-toastify";
 
 export const Container = styled.div`
 	display: grid;
@@ -136,5 +137,25 @@ export const ProductPrice = styled.div`
 
 	button:hover {
 		box-shadow: 0 0 5px ${(props) => props.theme.colors.primary};
+	}
+`;
+
+export const StyledToast = styled(ToastContainer).attrs({
+	toastClassName: "toast",
+	bodyClassName: "body",
+	progressClassName: "progress",
+})`
+	.toast {
+		color: ${(props) => props.theme.colors.white};
+		background-color: ${(props) => props.theme.colors.black};
+		box-shadow: inset 0 0 3px ${(props) => props.theme.colors.primary};
+	}
+
+	.body {
+		background-color: ${(props) => props.theme.colors.black};
+	}
+
+	.progress {
+		background-color: ${(props) => props.theme.colors.primary};
 	}
 `;
