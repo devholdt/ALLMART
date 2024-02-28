@@ -24,7 +24,7 @@ export const ProductCard = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 	border-radius: 8px;
-	background-color: #1c1c1c;
+	background-color: ${(props) => props.theme.colors.black};
 	box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.1);
 	padding: 0 1em;
 `;
@@ -46,7 +46,7 @@ export const ProductTitle = styled.div`
 	}
 
 	a {
-		color: #c9f66f;
+		color: ${(props) => props.theme.colors.primary};
 		font-style: italic;
 		text-decoration: none;
 		margin-left: 4px;
@@ -61,8 +61,8 @@ export const ProductTags = styled.div`
 
 export const ProductTag = styled.span`
 	font-size: 0.8em;
-	background-color: #c9f66f;
-	color: #1c1c1c;
+	background-color: ${(props) => props.theme.colors.primary};
+	color: ${(props) => props.theme.colors.black};
 	padding: 1px 6px 2px;
 	border-radius: 6px;
 `;
@@ -89,7 +89,7 @@ export const ProductDescription = styled.p`
 		float: right;
 		border: none;
 		background-color: transparent;
-		color: #c9f66f;
+		color: ${(props) => props.theme.colors.primary};
 		padding: 0;
 		font-size: 1em;
 		text-transform: lowercase;

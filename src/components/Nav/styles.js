@@ -14,7 +14,7 @@ export const Item = styled.li`
 
 	a {
 		text-decoration: none;
-		color: #fff;
+		color: ${(props) => props.theme.colors.white};
 	}
 `;
 
@@ -23,7 +23,7 @@ export const CartIcon = styled.div`
 	justify-content: center;
 	align-items: center;
 	border-radius: 50%;
-	background-color: #c9f66f;
+	background-color: ${(props) => props.theme.colors.primary};
 	width: 33px;
 	height: 33px;
 	margin-left: 1em;
@@ -37,8 +37,8 @@ export const CartCounter = styled.span`
 	margin-left: 30px;
 	margin-top: 25px;
 	position: absolute;
-	background-color: #e94e77;
-	color: white;
+	background-color: ${(props) => props.theme.colors.red};
+	color: ${(props) => props.theme.colors.white};
 	width: 16px;
 	height: 16px;
 	border-radius: 50%;

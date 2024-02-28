@@ -5,7 +5,7 @@ export const Container = styled.header`
 	justify-content: space-between;
 	align-items: center;
 	padding: 1rem;
-	background-color: #1c1c1c;
-	box-shadow: 0 0 10px 0 #1c1c1c;
+	background-color: ${(props) => props.theme.colors.black};
+	box-shadow: 0 0 10px 0 ${(props) => props.theme.colors.black};
 	z-index: 100;
 `;

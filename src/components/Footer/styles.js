@@ -4,8 +4,8 @@ export const Container = styled.footer`
 	padding: 1rem;
 	z-index: 100;
 	color: #fff;
-	background-color: #1c1c1c;
-	box-shadow: 0 0 10px 0 #1c1c1c;
+	background-color: ${(props) => props.theme.colors.black};
+	box-shadow: 0 0 10px 0 ${(props) => props.theme.colors.black};
 	flex-shrink: 0;
 	margin-top: 1em;
 `;
