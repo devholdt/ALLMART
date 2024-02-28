@@ -20,7 +20,7 @@ function Cart() {
 							<button onClick={() => dispatch(removeFromCart(product))}>
 								Remove 1
 							</button>{" "}
-							<Link to={`/products/${product.id}`}>View</Link>
+							<Link to={`/product/${product.id}`}>View</Link>
 						</p>
 					))}
 				</div>

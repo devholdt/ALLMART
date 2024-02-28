@@ -1,13 +1,14 @@
 import React from "react";
 import { useApi } from "../../hooks/useApi";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Cart/cartSlice";
 import { Link } from "react-router-dom";
 import * as S from "./styles";
 
 function Products() {
 	const url = "https://v2.api.noroff.dev/online-shop";
 	const { data, isLoading, isError } = useApi(url);
-	// const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
 	if (isLoading) {
 		return <p>Loading...</p>;
@@ -52,10 +53,9 @@ function Products() {
 							</S.ProductRating>
 							<S.ProductPrice>
 								<span>{product.price}kr</span>
-								<button>Add to cart</button>
-								{/* <button onClick={() => dispatch(addToCart(product))}>
-								Add to cart
-							</button>{" "} */}
+								<button onClick={() => dispatch(addToCart(product))}>
+									Add to cart
+								</button>{" "}
 							</S.ProductPrice>
 						</S.ProductBottom>
 					</S.ProductCard>
