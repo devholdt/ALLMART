@@ -32,8 +32,8 @@ export const CartIcon = styled.div`
 	align-items: center;
 	border-radius: 50%;
 	background-color: ${(props) => props.theme.colors.primary};
-	width: 33px;
-	height: 33px;
+	width: 36px;
+	height: 36px;
 	margin-left: 1em;
 `;
 
@@ -41,13 +41,13 @@ export const CartCounter = styled.span`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 0.8em;
+	font-size: ${(props) => (props.countThresh ? "0.6em" : "0.8em")};
 	margin-left: 30px;
 	margin-top: 25px;
 	position: absolute;
 	background-color: ${(props) => props.theme.colors.red};
 	color: ${(props) => props.theme.colors.white};
-	width: 16px;
-	height: 16px;
+	width: 18px;
+	height: 18px;
 	border-radius: 50%;
 `;

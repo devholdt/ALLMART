@@ -8,6 +8,14 @@ import * as S from "./styles";
 function Nav() {
 	const cartCount = useSelector(selectCartItemCount);
 
+	let cartCounter;
+
+	if (cartCount > 99) {
+		cartCounter = <S.CartCounter countThresh>99+</S.CartCounter>;
+	} else {
+		cartCounter = <S.CartCounter>{cartCount}</S.CartCounter>;
+	}
+
 	return (
 		<nav>
 			<S.List>
@@ -21,7 +29,7 @@ function Nav() {
 					<Link to="/cart">
 						<S.CartIcon>
 							<Icon iconName="cart" color="#1c1c1c" />
-							<S.CartCounter>{cartCount}</S.CartCounter>
+							{cartCounter}
 						</S.CartIcon>
 					</Link>
 				</S.Item>
