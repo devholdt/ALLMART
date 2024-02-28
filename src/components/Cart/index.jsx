@@ -17,26 +17,28 @@ function Cart() {
 			<S.CartContainer>
 				<h2>Receipt</h2>
 				<S.CartTable>
-					<S.CartRow>
-						<S.CartHeader>Product</S.CartHeader>
-						<S.CartHeader>Quantity</S.CartHeader>
-						<S.CartHeader>Price</S.CartHeader>
-					</S.CartRow>
-					{cartProducts.map((product) => (
-						<S.CartRow key={product.id}>
-							<S.CartData>{product.title}</S.CartData>
-							<S.CartData>
-								x{product.quantity}{" "}
-								<button onClick={() => dispatch(removeFromCart(product))}>
-									<Icon iconName="remove" color="#E94E77" />
-								</button>
-							</S.CartData>
-							<S.CartData>{product.price}kr</S.CartData>
-							<S.CartData>
-								<Link to={`/product/${product.id}`}>view</Link>
-							</S.CartData>
+					<tbody>
+						<S.CartRow>
+							<S.CartHeader>Product</S.CartHeader>
+							<S.CartHeader>Quantity</S.CartHeader>
+							<S.CartHeader>Price</S.CartHeader>
 						</S.CartRow>
-					))}
+						{cartProducts.map((product) => (
+							<S.CartRow key={product.id}>
+								<S.CartData>{product.title}</S.CartData>
+								<S.CartData>
+									x{product.quantity}{" "}
+									<button onClick={() => dispatch(removeFromCart(product))}>
+										<Icon iconName="remove" color="#E94E77" />
+									</button>
+								</S.CartData>
+								<S.CartData>{product.price}kr</S.CartData>
+								<S.CartData>
+									<Link to={`/product/${product.id}`}>view</Link>
+								</S.CartData>
+							</S.CartRow>
+						))}
+					</tbody>
 				</S.CartTable>
 
 				<S.CartTotal>

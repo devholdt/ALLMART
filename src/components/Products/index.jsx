@@ -2,7 +2,7 @@ import React from "react";
 import { useApi } from "../../hooks/useApi";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Cart/cartSlice";
-import { ToastContainer, toast, Zoom } from "react-toastify";
+import { toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import Icon from "../Icon";
@@ -13,6 +13,10 @@ function Products() {
 	const url = "https://v2.api.noroff.dev/online-shop";
 	const { data, isLoading, isError } = useApi(url);
 	const dispatch = useDispatch();
+
+	const CloseButton = ({ closeToast }) => (
+		<Icon iconName="close" color="#fff" onClick={closeToast} />
+	);
 
 	if (isLoading) {
 		return <p>Loading...</p>;
@@ -79,7 +83,7 @@ function Products() {
 				))}
 				<S.StyledToast
 					pauseOnFocusLoss={false}
-					closeButton={<Icon iconName="close" color="#fff" />}
+					closeButton={CloseButton}
 					transition={Zoom}
 				/>
 			</S.Container>
