@@ -9,6 +9,8 @@ import Icon from "../Icon";
 import Rating from "../Rating";
 import * as S from "./styles";
 
+import { Grid } from "react-loader-spinner";
+
 function Products() {
 	const url = "https://v2.api.noroff.dev/online-shop";
 	const { data, isLoading, isError } = useApi(url);
@@ -19,7 +21,20 @@ function Products() {
 	);
 
 	if (isLoading) {
-		return <p>Loading...</p>;
+		return (
+			<S.Loader>
+				<Grid
+					visible={true}
+					height="80"
+					width="80"
+					color="#c9f66f"
+					ariaLabel="grid-loading"
+					radius="12.5"
+					wrapperStyle={{}}
+					wrapperClass="grid-wrapper"
+				/>
+			</S.Loader>
+		);
 	}
 
 	if (isError) {

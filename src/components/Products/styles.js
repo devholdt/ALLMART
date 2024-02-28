@@ -1,6 +1,13 @@
 import styled from "styled-components";
 import { ToastContainer } from "react-toastify";
 
+export const Loader = styled.div`
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+`;
+
 export const Container = styled.div`
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
