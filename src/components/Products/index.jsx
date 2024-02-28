@@ -3,6 +3,7 @@ import { useApi } from "../../hooks/useApi";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Cart/cartSlice";
 import { Link } from "react-router-dom";
+import StarsDisplay from "../StarsDisplay";
 import * as S from "./styles";
 
 function Products() {
@@ -45,10 +46,9 @@ function Products() {
 
 						<S.ProductBottom>
 							<S.ProductRating>
-								{/* <p>
-								<StarsDisplay rating={product.rating} />
-							</p> */}
-								<span>Rating: {product.rating}</span>
+								<span>
+									<StarsDisplay rating={product.rating} />
+								</span>
 								<span>{product.reviews.length} review(s)</span>
 							</S.ProductRating>
 							<S.ProductPrice>

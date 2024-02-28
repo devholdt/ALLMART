@@ -108,8 +108,12 @@ export const ProductBottom = styled.div`
 
 export const ProductRating = styled.div`
 	display: flex;
-	align-items: center;
-	gap: 0.5em;
+	flex-direction: column;
+	font-style: italic;
+
+	span:last-child {
+		font-size: 0.9em;
+	}
 `;
 
 export const ProductPrice = styled.div`
