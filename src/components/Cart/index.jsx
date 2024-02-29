@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import autoAnimate from "@formkit/auto-animate";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart, clearCart } from "./cartSlice";
+import { removeFromCart, addToCart, clearCart } from "./cartSlice";
 import { Link } from "react-router-dom";
 import Icon from "../Icon";
 import * as S from "./styles";
@@ -11,43 +12,47 @@ function Cart() {
 	);
 	const dispatch = useDispatch();
 
+	const listRef = useRef(null);
+
+	useEffect(() => {
+		listRef.current && autoAnimate(listRef.current);
+	}, [listRef]);
+
 	return (
 		<main>
 			<h1>Cart</h1>
-			<S.CartContainer>
+
+			<S.CartContainer ref={listRef}>
 				<h2>Receipt</h2>
-				<S.CartTable>
-					<tbody>
-						<S.CartRow>
-							<S.CartHeader>Product</S.CartHeader>
-							<S.CartHeader>Quantity</S.CartHeader>
-							<S.CartHeader>Price</S.CartHeader>
-						</S.CartRow>
-						{cartProducts.map((product) => (
-							<S.CartRow key={product.id}>
-								<S.CartData>{product.title}</S.CartData>
-								<S.CartData>
-									x{product.quantity}{" "}
-									<button onClick={() => dispatch(removeFromCart(product))}>
-										<Icon iconName="remove" color="#E94E77" />
-									</button>
-								</S.CartData>
-								<S.CartData>{product.price}kr</S.CartData>
-								<S.CartData>
-									<Link to={`/product/${product.id}`}>view</Link>
-								</S.CartData>
-							</S.CartRow>
-						))}
-					</tbody>
-				</S.CartTable>
+
+				{cartProducts.map((product) => (
+					<S.CartItem key={product.id}>
+						<S.CartImage src={product.image.url} alt={product.title} />
+						<S.CartTitle>
+							<h3>{product.title}</h3>
+							<Link to={`/product/${product.id}`}>view</Link>
+						</S.CartTitle>
+						<S.CartQuantity>
+							<button onClick={() => dispatch(removeFromCart(product))}>
+								<Icon iconName="remove" color="#E94E77" />
+							</button>
+							<p>x{product.quantity}</p>
+							<button
+								onClick={() => {
+									dispatch(addToCart(product));
+								}}
+							>
+								<Icon iconName="add" color="#C9F66F" />
+							</button>
+						</S.CartQuantity>
+					</S.CartItem>
+				))}
 
 				<S.CartTotal>
+					<button onClick={() => dispatch(clearCart())}>empty cart</button>
 					<p>
-						TOTAL <span>{totalCost.toFixed(2)}kr</span>
+						Total: <span>{totalCost.toFixed(2)}kr</span>
 					</p>
-					<button onClick={() => dispatch(clearCart())}>
-						<Icon iconName="trash" color="#E94E77" />
-					</button>
 				</S.CartTotal>
 			</S.CartContainer>
 		</main>

@@ -17,6 +17,7 @@ import {
 	faMinusCircle,
 	faCheck,
 	faTimes,
+	faPlusCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -29,7 +30,8 @@ library.add(
 	faTrashAlt,
 	faMinusCircle,
 	faCheck,
-	faTimes
+	faTimes,
+	faPlusCircle
 );
 
 const Icon = ({ iconName, color = "black", ...props }) => {
@@ -39,7 +41,7 @@ const Icon = ({ iconName, color = "black", ...props }) => {
 		email: faEnvelope,
 		view: faEye,
 		back: faArrowLeft,
-		add: faCartPlus,
+		addToCart: faCartPlus,
 		trash: faTrashAlt,
 		fullStar: fullStar,
 		halfStar: halfStar,
@@ -47,6 +49,7 @@ const Icon = ({ iconName, color = "black", ...props }) => {
 		remove: faMinusCircle,
 		check: faCheck,
 		close: faTimes,
+		add: faPlusCircle,
 	};
 
 	const icon = iconMap[iconName];

@@ -3,40 +3,45 @@ import styled from "styled-components";
 export const CartContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	padding: 1em;
+	margin: auto;
+	padding: 1em 2em;
 	background-color: ${(props) => props.theme.colors.black};
-	color: ${(props) => props.theme.colors.white};
-	border-radius: 10px;
 	box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.1);
+	border-radius: 10px;
 	max-width: 600px;
-	margin: 1em auto;
 
 	h2 {
-		margin: 0 0 0.5em;
+		border-bottom: 2px solid ${(props) => props.theme.colors.white};
+		padding: 0.5em;
+		margin: 0;
 	}
 `;
 
-export const CartTable = styled.table`
-	border-collapse: collapse;
-
-	td,
-	th {
-		text-align: left;
-		padding: 1em 0.5em;
-		width: fit-content;
-	}
+export const CartItem = styled.div`
+	display: flex;
+	align-items: center;
+	padding: 1em;
+	border-bottom: 1px dotted ${(props) => props.theme.colors.white};
 `;
 
-export const CartHeader = styled.th`
-	border-bottom: 3px solid ${(props) => props.theme.colors.white};
+export const CartImage = styled.img`
+	max-width: 80px;
+	width: 100%;
+	height: 50px;
+	object-fit: cover;
 `;
 
-export const CartRow = styled.tr`
-	button {
-		background-color: transparent;
-		border: none;
-		cursor: pointer;
+export const CartTitle = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+	margin: 0 1em;
+	flex: 1;
+
+	h3 {
+		color: ${(props) => props.theme.colors.white};
 		font-size: 1em;
+		line-height: 20px;
 	}
 
 	a {
@@ -44,26 +49,34 @@ export const CartRow = styled.tr`
 		font-style: italic;
 		text-decoration: none;
 	}
-
-	td:last-child {
-		border: none;
-		padding-left: 0.5em;
-		font-size: 0.9em;
-	}
 `;
 
-export const CartData = styled.td`
-	border-bottom: 1px solid ${(props) => props.theme.colors.white};
-	width: 50px;
+export const CartQuantity = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.7em;
+	font-size: 0.9em;
+
+	p {
+		padding: 0.4em 0.6em;
+		border-radius: 5px;
+		border: 1px solid ${(props) => props.theme.colors.white};
+	}
+
+	button {
+		font-size: 1.1em;
+		border: none;
+		background-color: transparent;
+		cursor: pointer;
+	}
 `;
 
 export const CartTotal = styled.div`
 	display: flex;
-	align-items: center;
-	vertical-align: middle;
 	justify-content: space-between;
-	margin-top: 1em;
-	padding-right: 2em;
+	align-items: center;
+	padding-left: 1em;
 
 	span {
 		color: ${(props) => props.theme.colors.primary};
@@ -71,9 +84,12 @@ export const CartTotal = styled.div`
 	}
 
 	button {
-		font-size: 1.1em;
-		border: none;
+		color: ${(props) => props.theme.colors.white};
 		background-color: transparent;
+		font-size: 1em;
+		font-style: italic;
+		text-decoration: underline;
+		border: none;
 		cursor: pointer;
 	}
 `;

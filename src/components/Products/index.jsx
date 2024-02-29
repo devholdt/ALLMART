@@ -90,7 +90,7 @@ function Products() {
 										});
 									}}
 								>
-									<Icon iconName="add" color="#1c1c1c" />
+									<Icon iconName="addToCart" color="#1c1c1c" />
 								</button>
 							</S.ProductPrice>
 						</S.ProductBottom>
