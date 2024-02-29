@@ -4,7 +4,7 @@ export const CartContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin: auto;
-	padding: 1em 2em;
+	padding: 1em;
 	background-color: ${(props) => props.theme.colors.black};
 	box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.1);
 	border-radius: 10px;
