@@ -25,6 +25,10 @@ function Cart() {
 			<S.CartContainer ref={listRef}>
 				<h2>Receipt</h2>
 
+				<S.CartEmpty>
+					{cartProducts.length === 0 && <p>The cart is empty</p>}
+				</S.CartEmpty>
+
 				{cartProducts.map((product) => (
 					<S.CartItem key={product.id}>
 						<S.CartImage src={product.image.url} alt={product.title} />
@@ -49,7 +53,14 @@ function Cart() {
 				))}
 
 				<S.CartTotal>
-					<button onClick={() => dispatch(clearCart())}>empty cart</button>
+					<button
+						style={{
+							visibility: cartProducts.length > 0 ? "visible" : "hidden",
+						}}
+						onClick={() => dispatch(clearCart())}
+					>
+						empty cart
+					</button>
 					<p>
 						Total: <span>{totalCost.toFixed(2)}kr</span>
 					</p>

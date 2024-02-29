@@ -17,6 +17,11 @@ export const CartContainer = styled.div`
 	}
 `;
 
+export const CartEmpty = styled.div`
+	color: ${(props) => props.theme.colors.white};
+	text-align: center;
+`;
+
 export const CartItem = styled.div`
 	display: flex;
 	align-items: center;
