@@ -52,8 +52,9 @@ function Cart() {
 					</S.CartItem>
 				))}
 
-				<S.CartTotal>
+				<S.CartBottom>
 					<button
+						className="empty-cart"
 						style={{
 							visibility: cartProducts.length > 0 ? "visible" : "hidden",
 						}}
@@ -61,10 +62,13 @@ function Cart() {
 					>
 						empty cart
 					</button>
-					<p>
-						Total: <span>{totalCost.toFixed(2)}kr</span>
-					</p>
-				</S.CartTotal>
+					<div>
+						<p className="cart-total">
+							Total: <span>{totalCost.toFixed(2)}kr</span>
+						</p>
+						<button className="cart-checkout">Checkout</button>
+					</div>
+				</S.CartBottom>
 			</S.CartContainer>
 		</main>
 	);

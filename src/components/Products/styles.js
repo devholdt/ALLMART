@@ -155,7 +155,7 @@ export const StyledToast = styled(ToastContainer).attrs({
 	.toast {
 		color: ${(props) => props.theme.colors.white};
 		background-color: ${(props) => props.theme.colors.black};
-		box-shadow: inset 0 0 3px ${(props) => props.theme.colors.primary};
+		box-shadow: ${(props) => props.theme.boxShadows.primaryInset};
 	}
 
 	.body {
