@@ -41,7 +41,6 @@ export const ContactForm = styled.form`
 `;
 
 export const FormInput = styled.input`
-	margin-bottom: 1em;
 	padding: 0.5em;
 	font-size: 1em;
 	border: 1px solid #ddd;
@@ -50,13 +49,18 @@ export const FormInput = styled.input`
 
 export const FormTextarea = styled.textarea`
 	font-family: inherit;
-	margin-bottom: 1em;
 	padding: 0.5em;
 	font-size: 1em;
 	border: 1px solid #ddd;
 	border-radius: 5px;
 	height: 150px;
 	resize: none;
+`;
+
+export const FormError = styled.p`
+	color: ${(props) => props.theme.colors.red};
+	margin-top: 4px;
+	margin-bottom: 1em;
 `;
 
 export const FormSubmit = styled.input`

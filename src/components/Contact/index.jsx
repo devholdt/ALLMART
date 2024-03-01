@@ -1,17 +1,40 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import * as S from "./styles";
 
 function Contact() {
+	const schema = yup
+		.object({
+			fullName: yup
+				.string()
+				.required("Please enter your full name")
+				.min(3, "Full name must be at least 3 characters"),
+			email: yup
+				.string()
+				.required("Please enter your email")
+				.email("Please enter a valid email address"),
+			subject: yup
+				.string()
+				.required("Please enter the subject")
+				.min(3, "Subject must be at least 3 characters"),
+			message: yup
+				.string()
+				.required("Please enter your message")
+				.min(3, "Message must be at least 3 characters"),
+		})
+		.required("Please fill in all the required fields");
+
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
-	} = useForm();
+	} = useForm({
+		resolver: yupResolver(schema),
+	});
 
 	const onSubmit = (data) => console.log(data);
-
-	console.log(errors);
 
 	return (
 		<main>
@@ -30,14 +53,7 @@ function Contact() {
 						placeholder="Full name"
 						{...register("fullName", { required: true, min: 3 })}
 					/>
-
-					<label htmlFor="subject">Subject</label>
-					<S.FormInput
-						id="subject"
-						type="text"
-						placeholder="Subject"
-						{...register("subject", { required: true })}
-					/>
+					<S.FormError>{errors.fullName?.message}</S.FormError>
 
 					<label htmlFor="email">Email</label>
 					<S.FormInput
@@ -49,6 +65,16 @@ function Contact() {
 							pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i,
 						})}
 					/>
+					<S.FormError>{errors.email?.message}</S.FormError>
+
+					<label htmlFor="subject">Subject</label>
+					<S.FormInput
+						id="subject"
+						type="text"
+						placeholder="Subject"
+						{...register("subject", { required: true })}
+					/>
+					<S.FormError>{errors.subject?.message}</S.FormError>
 
 					<label htmlFor="message">Message</label>
 					<S.FormTextarea
@@ -56,6 +82,7 @@ function Contact() {
 						placeholder="Message"
 						{...register("message", { required: true, min: 3 })}
 					/>
+					<S.FormError>{errors.message?.message}</S.FormError>
 
 					<S.FormSubmit type="submit" />
 				</S.ContactForm>
