@@ -62,7 +62,6 @@ function Contact() {
 						placeholder="Email"
 						{...register("email", {
 							required: true,
-							pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i,
 						})}
 					/>
 					<S.FormError>{errors.email?.message}</S.FormError>

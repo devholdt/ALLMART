@@ -14,7 +14,7 @@ export const ContactContainer = styled.div`
 export const ContactTitle = styled.div`
 	display: flex;
 	flex-direction: column;
-	border-bottom: 1px solid ${(props) => props.theme.colors.white};
+	border-bottom: 2px solid ${(props) => props.theme.colors.white};
 	padding: 0.5em 0.5em 1em;
 	margin-top: 0;
 	margin-bottom: 1em;
