@@ -7,7 +7,7 @@ export const CheckoutContainer = styled.div`
 	margin: auto;
 	background-color: ${(props) => props.theme.colors.white};
 	color: ${(props) => props.theme.colors.black};
-	box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.1);
+	box-shadow: ${(props) => props.theme.boxShadows.primary};
 	border-radius: 10px;
 	max-width: 400px;
 	padding: 2em 1em 1em;
@@ -21,6 +21,17 @@ export const CheckoutHeader = styled.div`
 	border-bottom: 2px solid ${(props) => props.theme.colors.black};
 	width: 100%;
 	padding: 1em 0;
+
+	div {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+	}
+
+	svg {
+		box-shadow: ${(props) => props.theme.boxShadows.black};
+		border-radius: 50%;
+	}
 `;
 
 export const CheckoutItems = styled.div`
@@ -74,14 +85,18 @@ export const CheckoutBottom = styled.div`
 
 	button {
 		background-color: ${(props) => props.theme.colors.primaryAlt};
-		color: ${(props) => props.theme.colors.darkAlt};
+		color: ${(props) => props.theme.colors.dark};
 		border: none;
-		border: 1px solid ${(props) => props.theme.colors.whiteAlt};
 		text-transform: uppercase;
 		font-weight: bold;
 		border-radius: 5px;
 		cursor: pointer;
 		width: 100%;
 		padding: 1em;
+		transition: all 0.2s ease-in-out;
+
+		&:hover {
+			background-color: ${(props) => props.theme.colors.primary};
+		}
 	}
 `;

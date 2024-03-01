@@ -15,14 +15,18 @@ export const Item = styled.li`
 	a {
 		text-decoration: none;
 		color: ${(props) => props.theme.colors.white};
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 
-	a:hover {
-		text-decoration: underline;
-	}
+	div {
+		transition: all 0.2s ease-in-out;
 
-	div:hover {
-		box-shadow: 0 0 5px ${(props) => props.theme.colors.primary};
+		&:hover {
+			box-shadow: ${(props) => props.theme.boxShadows.primary};
+		}
 	}
 `;
 

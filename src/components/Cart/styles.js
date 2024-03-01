@@ -6,7 +6,7 @@ export const CartContainer = styled.div`
 	margin: auto;
 	padding: 1em;
 	background-color: ${(props) => props.theme.colors.black};
-	box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.1);
+	box-shadow: ${(props) => props.theme.boxShadows.white};
 	border-radius: 10px;
 	max-width: 600px;
 
@@ -75,6 +75,24 @@ export const CartQuantity = styled.div`
 		border: none;
 		background-color: transparent;
 		cursor: pointer;
+		padding: 0;
+		display: flex;
+		height: 17.5px;
+		width: 17.5px;
+		border-radius: 50%;
+		transition: all 0.1s ease-in-out;
+
+		&:hover {
+			box-shadow: ${(props) => props.theme.boxShadows.red};
+		}
+	}
+
+	button:last-child {
+		border-color: red;
+
+		&:hover {
+			box-shadow: ${(props) => props.theme.boxShadows.primary};
+		}
 	}
 `;
 
@@ -112,13 +130,15 @@ export const CartBottom = styled.div`
 		text-transform: uppercase;
 		border: none;
 		background-color: ${(props) => props.theme.colors.primary};
-		color: ${(props) => props.theme.colors.darkAlt};
+		color: ${(props) => props.theme.colors.dark};
 		border-radius: 5px;
+		transition: all 0.2s ease-in-out;
 		cursor: pointer;
-	}
 
-	.cart-checkout:hover {
-		background-color: ${(props) => props.theme.colors.primaryAlt};
+		&:hover {
+			background-color: ${(props) => props.theme.colors.primaryAlt};
+			box-shadow: ${(props) => props.theme.boxShadows.primary};
+		}
 	}
 
 	.cart-checkout:disabled {

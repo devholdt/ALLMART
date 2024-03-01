@@ -33,7 +33,7 @@ export const ProductCard = styled.div`
 	justify-content: space-between;
 	border-radius: 8px;
 	background-color: ${(props) => props.theme.colors.black};
-	box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.1);
+	box-shadow: ${(props) => props.theme.boxShadows.white};
 	padding: 0 1em;
 `;
 
@@ -139,11 +139,12 @@ export const ProductPrice = styled.div`
 		height: 33px;
 		font-size: 1em;
 		border-radius: 50%;
+		transition: all 0.2s ease-in-out;
 		cursor: pointer;
-	}
 
-	button:hover {
-		box-shadow: 0 0 5px ${(props) => props.theme.colors.primary};
+		&:hover {
+			box-shadow: ${(props) => props.theme.boxShadows.primary};
+		}
 	}
 `;
 

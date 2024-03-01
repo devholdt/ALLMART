@@ -7,7 +7,7 @@ export const ContactContainer = styled.div`
 	margin: auto;
 	padding: 1em;
 	background-color: ${(props) => props.theme.colors.black};
-	box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.1);
+	box-shadow: ${(props) => props.theme.boxShadows.white};
 	border-radius: 10px;
 	max-width: 400px;
 `;
@@ -66,16 +66,18 @@ export const FormError = styled.p`
 
 export const FormSubmit = styled.input`
 	background-color: ${(props) => props.theme.colors.primary};
-	color: ${(props) => props.theme.colors.black};
-	cursor: pointer;
+	color: ${(props) => props.theme.colors.dark};
 	border: none;
 	border-radius: 5px;
 	padding: 0.5em;
 	font-size: 1em;
-	transition: background-color 0.3s ease;
+	font-weight: 600;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
 
 	&:hover {
-		background-color: ${(props) => props.theme.colors.primaryAlt};
+		box-shadow: ${(props) => props.theme.boxShadows.primary};
 	}
 `;
 
@@ -87,7 +89,7 @@ export const StyledToast = styled(ToastContainer).attrs({
 	.toast {
 		color: ${(props) => props.theme.colors.white};
 		background-color: ${(props) => props.theme.colors.black};
-		box-shadow: inset 0 0 3px ${(props) => props.theme.colors.primary};
+		box-shadow: ${(props) => props.theme.boxShadows.primaryInset};
 	}
 
 	.body {

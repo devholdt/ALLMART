@@ -17,7 +17,10 @@ function Checkout() {
 			<S.CheckoutContainer>
 				<S.CheckoutHeader>
 					<Logo color="black" size="140px" />
-					<h2>Thank you for shopping with us!</h2>
+					<div>
+						<h2>Thank you for shopping with us!</h2>
+						<Icon iconName="circleCheck" color="#B0D65F" size="2xl" />
+					</div>
 				</S.CheckoutHeader>
 
 				<S.CheckoutItems>
