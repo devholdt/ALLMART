@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ToastContainer } from "react-toastify";
 
 export const ContactContainer = styled.div`
 	display: flex;
@@ -75,5 +76,25 @@ export const FormSubmit = styled.input`
 
 	&:hover {
 		background-color: ${(props) => props.theme.colors.primaryAlt};
+	}
+`;
+
+export const StyledToast = styled(ToastContainer).attrs({
+	toastClassName: "toast",
+	bodyClassName: "body",
+	progressClassName: "progress",
+})`
+	.toast {
+		color: ${(props) => props.theme.colors.white};
+		background-color: ${(props) => props.theme.colors.black};
+		box-shadow: inset 0 0 3px ${(props) => props.theme.colors.primary};
+	}
+
+	.body {
+		background-color: ${(props) => props.theme.colors.black};
+	}
+
+	.progress {
+		background-color: ${(props) => props.theme.colors.primary};
 	}
 `;
