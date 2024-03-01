@@ -34,7 +34,7 @@ library.add(
 	faPlusCircle
 );
 
-const Icon = ({ iconName, color = "black", ...props }) => {
+const Icon = ({ iconName, color, ...props }) => {
 	const iconMap = {
 		cart: faShoppingCart,
 		phone: faPhone,

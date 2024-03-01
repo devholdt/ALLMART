@@ -7,7 +7,7 @@ export const theme = {
 		dark: "#252525",
 		darkAlt: "#3E3E3E",
 		white: "#FFFFFF",
-		whiteAlt: "#F0F0F0",
+		whiteAlt: "#E0E0E0",
 		red: "#E94E77",
 		redAlt: "#D6426B",
 	},
