@@ -66,9 +66,11 @@ function Cart() {
 						<p className="cart-total">
 							Total: <span>{totalCost.toFixed(2)}kr</span>
 						</p>
-						<button className="cart-checkout" disabled={isCartEmpty}>
-							Checkout
-						</button>
+						<Link to={`/checkout`}>
+							<button className="cart-checkout" disabled={isCartEmpty}>
+								Checkout
+							</button>
+						</Link>
 					</div>
 				</S.CartBottom>
 			</S.CartContainer>
