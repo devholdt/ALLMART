@@ -145,5 +145,9 @@ export const CartBottom = styled.div`
 		background-color: ${(props) => props.theme.colors.darkAlt};
 		color: ${(props) => props.theme.colors.black};
 		cursor: not-allowed;
+
+		&:hover {
+			box-shadow: none;
+		}
 	}
 `;
