@@ -120,4 +120,10 @@ export const CartBottom = styled.div`
 	.cart-checkout:hover {
 		background-color: ${(props) => props.theme.colors.primaryAlt};
 	}
+
+	.cart-checkout:disabled {
+		background-color: ${(props) => props.theme.colors.darkAlt};
+		color: ${(props) => props.theme.colors.black};
+		cursor: not-allowed;
+	}
 `;

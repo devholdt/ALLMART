@@ -18,6 +18,8 @@ function Cart() {
 		listRef.current && autoAnimate(listRef.current);
 	}, [listRef]);
 
+	const isCartEmpty = cartProducts.length === 0;
+
 	return (
 		<main>
 			<h1>Cart</h1>
@@ -25,9 +27,7 @@ function Cart() {
 			<S.CartContainer ref={listRef}>
 				<h2>Receipt</h2>
 
-				<S.CartEmpty>
-					{cartProducts.length === 0 && <p>The cart is empty</p>}
-				</S.CartEmpty>
+				<S.CartEmpty>{isCartEmpty && <p>The cart is empty</p>}</S.CartEmpty>
 
 				{cartProducts.map((product) => (
 					<S.CartItem key={product.id}>
@@ -66,7 +66,9 @@ function Cart() {
 						<p className="cart-total">
 							Total: <span>{totalCost.toFixed(2)}kr</span>
 						</p>
-						<button className="cart-checkout">Checkout</button>
+						<button className="cart-checkout" disabled={isCartEmpty}>
+							Checkout
+						</button>
 					</div>
 				</S.CartBottom>
 			</S.CartContainer>
