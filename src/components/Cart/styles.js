@@ -112,7 +112,7 @@ export const CartBottom = styled.div`
 		text-transform: uppercase;
 		border: none;
 		background-color: ${(props) => props.theme.colors.primary};
-		color: ${(props) => props.theme.colors.black};
+		color: ${(props) => props.theme.colors.darkAlt};
 		border-radius: 5px;
 		cursor: pointer;
 	}

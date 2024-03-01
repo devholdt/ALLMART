@@ -1,7 +1,13 @@
 import React, { useRef, useEffect } from "react";
 import autoAnimate from "@formkit/auto-animate";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart, addToCart, clearCart } from "./cartSlice";
+import {
+	removeFromCart,
+	addToCart,
+	clearCart,
+	checkout as checkoutCart,
+} from "./cartSlice";
+import { checkout as checkoutCheckedOut } from "./checkedOutSlice";
 import { Link } from "react-router-dom";
 import Icon from "../Icon";
 import * as S from "./styles";
@@ -67,7 +73,16 @@ function Cart() {
 							Total: <span>{totalCost.toFixed(2)}kr</span>
 						</p>
 						<Link to={`/checkout`}>
-							<button className="cart-checkout" disabled={isCartEmpty}>
+							<button
+								className="cart-checkout"
+								disabled={isCartEmpty}
+								onClick={() => {
+									dispatch(
+										checkoutCheckedOut({ products: cartProducts, totalCost })
+									);
+									dispatch(checkoutCart());
+								}}
+							>
 								Checkout
 							</button>
 						</Link>
