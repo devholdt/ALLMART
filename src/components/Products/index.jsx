@@ -3,13 +3,12 @@ import { useApi } from "../../hooks/useApi";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Cart/cartSlice";
 import { toast, Zoom } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
+import { Grid } from "react-loader-spinner";
 import Icon from "../Icon";
 import Rating from "../Rating";
 import * as S from "./styles";
-
-import { Grid } from "react-loader-spinner";
+import "react-toastify/dist/ReactToastify.css";
 
 function Products() {
 	const url = "https://v2.api.noroff.dev/online-shop";
@@ -38,11 +37,11 @@ function Products() {
 	}
 
 	if (isError) {
-		return <p>Error fetching data</p>;
+		return <p>Error fetching products</p>;
 	}
 
 	return (
-		<div>
+		<main>
 			<h2>Products</h2>
 			<S.Container>
 				{data.map((product) => (
@@ -102,7 +101,7 @@ function Products() {
 					transition={Zoom}
 				/>
 			</S.Container>
-		</div>
+		</main>
 	);
 }
 
