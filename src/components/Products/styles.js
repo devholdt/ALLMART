@@ -129,6 +129,22 @@ export const ProductPrice = styled.div`
 	justify-content: space-between;
 	align-items: center;
 
+	.discounted-price {
+		display: flex;
+		flex-direction: column;
+		gap: 0em;
+	}
+
+	.old-price {
+		font-size: 0.8em;
+		text-decoration: line-through;
+	}
+
+	.new-price {
+		color: ${(props) => props.theme.colors.redAlt};
+		font-weight: bold;
+	}
+
 	button {
 		display: flex;
 		justify-content: center;

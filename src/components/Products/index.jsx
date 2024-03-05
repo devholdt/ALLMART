@@ -40,6 +40,8 @@ function Products() {
 		return <p>Error fetching products</p>;
 	}
 
+	let price;
+
 	return (
 		<main>
 			<h2>Products</h2>
@@ -73,7 +75,17 @@ function Products() {
 								<span>{product.reviews.length} review(s)</span>
 							</S.ProductRating>
 							<S.ProductPrice>
-								<span>{product.price}kr</span>
+								{product.price === product.discountedPrice ? (
+									<span>{product.price}</span>
+								) : (
+									<div className="discounted-price">
+										<span className="old-price">{product.price}kr</span>{" "}
+										<span className="new-price">
+											{product.discountedPrice}kr
+										</span>
+									</div>
+								)}
+
 								<button
 									onClick={() => {
 										dispatch(addToCart(product));

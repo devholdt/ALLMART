@@ -9,7 +9,7 @@ export const theme = {
 		white: "#FFFFFF",
 		whiteAlt: "#E0E0E0",
 		red: "#E94E77",
-		redAlt: "#D6426B",
+		redAlt: "#EC7090",
 	},
 	fontSizes: {
 		smaller: "0.8em",
