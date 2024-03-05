@@ -8,26 +8,132 @@ export const Loader = styled.div`
 	transform: translate(-50%, -50%);
 `;
 
-export const ProductContainer = styled.div`
+export const Container = styled.main`
 	display: flex;
 	flex-direction: column;
-	max-width: 300px;
+	max-width: 900px;
+	margin: auto;
+
+	h1,
+	h2 {
+		margin-bottom: 0.5em;
+	}
+
+	h2 {
+		margin-top: 2em;
+	}
 `;
 
-export const ProductImage = styled.img`
-	max-height: 300px;
-	max-width: 300px;
-	width: 100%;
-	object-fit: cover;
+export const Product = styled.div`
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1em;
+	padding-bottom: 3em;
+	border-bottom: 1px solid ${(props) => props.theme.colors.white};
+
+	img {
+		width: 100%;
+		height: 400px;
+		object-fit: cover;
+	}
+
+	.product-tags {
+		display: flex;
+		gap: 0.5em;
+		margin-top: 0.5em;
+
+		span {
+			background-color: ${(props) => props.theme.colors.primary};
+			color: ${(props) => props.theme.colors.black};
+			padding: 2px 8px 4px;
+			border-radius: 6px;
+		}
+	}
+
+	.product-details {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+	}
+
+	.product-top {
+		display: flex;
+		align-items: start;
+		justify-content: space-between;
+
+		.regular-price {
+			font-size: ${(props) => props.theme.fontSizes.large};
+			font-weight: bold;
+		}
+
+		.discounted-price {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.old-price {
+			font-size: ${(props) => props.theme.fontSizes.smaller};
+			text-decoration: line-through;
+		}
+
+		.new-price {
+			font-size: ${(props) => props.theme.fontSizes.large};
+			color: ${(props) => props.theme.colors.redAlt};
+			font-weight: bold;
+		}
+
+		.product-rating {
+			display: flex;
+			align-items: center;
+			gap: 0.6em;
+
+			button {
+				padding: 0;
+				margin-left: 0.3em;
+				border: none;
+				background-color: transparent;
+				font-size: 1em;
+				cursor: pointer;
+			}
+
+			svg {
+				font-size: 0.8em;
+			}
+		}
+	}
+
+	.product-cart {
+		button {
+			width: 100%;
+			padding: 1em;
+			margin-bottom: 1em;
+			font-size: 1em;
+			font-weight: bold;
+			text-transform: uppercase;
+			border: none;
+			background-color: ${(props) => props.theme.colors.primary};
+			cursor: pointer;
+		}
+	}
 `;
 
-export const ProductRating = styled.div`
+export const ProductReview = styled.div`
 	display: flex;
 	flex-direction: column;
-	font-style: italic;
+	gap: 0.5em;
+	padding-bottom: 3em;
 
-	span:last-child {
-		font-size: 0.9em;
+	.product-review {
+		display: flex;
+		flex-direction: column;
+		background-color: ${(props) => props.theme.colors.black};
+		gap: 0.5em;
+		padding: 1em;
+
+		h3,
+		p {
+			margin: 0;
+		}
 	}
 `;
 

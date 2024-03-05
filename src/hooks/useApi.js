@@ -10,11 +10,16 @@ export function useApi(url) {
 			try {
 				setIsLoading(true);
 				setIsError(false);
-				const fetchedData = await fetch(url);
-				const json = await fetchedData.json();
+
+				const response = await fetch(url);
+				const json = await response.json();
+
 				setData(json.data);
+				setIsLoading(false);
 			} catch (error) {
 				console.log(error);
+
+				setIsLoading(false);
 				setIsError(true);
 			} finally {
 				setIsLoading(false);
@@ -23,5 +28,6 @@ export function useApi(url) {
 
 		getData();
 	}, [url]);
+
 	return { data, isLoading, isError };
 }

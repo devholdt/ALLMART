@@ -15,11 +15,7 @@ function Products() {
 	const { data, isLoading, isError } = useApi(url);
 	const dispatch = useDispatch();
 
-	const CloseButton = ({ closeToast }) => (
-		<Icon iconName="close" color="#fff" onClick={closeToast} />
-	);
-
-	if (isLoading) {
+	if (isLoading || !data) {
 		return (
 			<S.Loader>
 				<Grid
@@ -39,6 +35,10 @@ function Products() {
 	if (isError) {
 		return <p>Error fetching products</p>;
 	}
+
+	const CloseButton = ({ closeToast }) => (
+		<Icon iconName="close" color="#fff" onClick={closeToast} />
+	);
 
 	return (
 		<main>
@@ -60,7 +60,7 @@ function Products() {
 									);
 								})}
 							</S.ProductTags>
-							<S.ProductImage src={product.image.url} alt={product.title} />
+							<S.ProductImage src={product.image?.url} alt={product.title} />
 						</S.ProductTop>
 
 						<S.ProductDescription>{product.description}</S.ProductDescription>
