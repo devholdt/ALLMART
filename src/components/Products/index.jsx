@@ -40,8 +40,6 @@ function Products() {
 		return <p>Error fetching products</p>;
 	}
 
-	let price;
-
 	return (
 		<main>
 			<h2>Products</h2>
@@ -76,7 +74,7 @@ function Products() {
 							</S.ProductRating>
 							<S.ProductPrice>
 								{product.price === product.discountedPrice ? (
-									<span>{product.price}</span>
+									<span>{product.price}kr</span>
 								) : (
 									<div className="discounted-price">
 										<span className="old-price">{product.price}kr</span>{" "}
