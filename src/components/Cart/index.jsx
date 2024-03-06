@@ -1,12 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import autoAnimate from "@formkit/auto-animate";
 import { useSelector, useDispatch } from "react-redux";
-import {
-	removeFromCart,
-	addToCart,
-	clearCart,
-	checkout as checkoutCart,
-} from "./cartSlice";
+import { removeFromCart, addToCart, clearCart } from "./cartSlice";
 import { checkout as checkoutCheckedOut } from "./checkedOutSlice";
 import { Link } from "react-router-dom";
 import Icon from "../Icon";
@@ -49,7 +44,7 @@ function Cart() {
 							<p>x{product.quantity}</p>
 							<button
 								onClick={() => {
-									dispatch(addToCart(product));
+									dispatch(addToCart({ ...product, quantity: 1 }));
 								}}
 							>
 								<Icon iconName="add" color="#C9F66F" />
@@ -80,7 +75,7 @@ function Cart() {
 									dispatch(
 										checkoutCheckedOut({ products: cartProducts, totalCost })
 									);
-									dispatch(checkoutCart());
+									dispatch(clearCart());
 								}}
 							>
 								Checkout

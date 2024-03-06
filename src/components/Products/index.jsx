@@ -86,7 +86,7 @@ function Products() {
 
 								<button
 									onClick={() => {
-										dispatch(addToCart(product));
+										dispatch(addToCart({ ...product, quantity: 1 }));
 										toast.success(`${product.title} added to cart!`, {
 											position: "bottom-right",
 											autoClose: 1000,

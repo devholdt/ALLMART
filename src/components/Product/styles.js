@@ -94,9 +94,45 @@ export const Product = styled.div`
 	}
 
 	.product-cart {
-		button {
+		display: flex;
+		gap: 1em;
+		height: 40px;
+
+		div {
+			display: flex;
+
+			button {
+				width: 40px;
+				border: none;
+				font-size: ${(props) => props.theme.fontSizes.normal};
+				cursor: pointer;
+			}
+
+			input {
+				width: 40px;
+				text-align: center;
+				border: none;
+				font-size: ${(props) => props.theme.fontSizes.large};
+
+				&::-webkit-outer-spin-button,
+				&::-webkit-inner-spin-button {
+					-webkit-appearance: none;
+					margin: 0;
+				}
+
+				&[type="number"] {
+					appearance: textfield;
+				}
+
+				&:focus {
+					outline: none;
+				}
+			}
+		}
+
+		.add-to-cart {
 			width: 100%;
-			padding: 1em;
+			height: 100%;
 			margin-bottom: 1em;
 			font-size: 1em;
 			font-weight: bold;

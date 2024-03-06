@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useApi } from "../../hooks/useApi";
 import { useDispatch } from "react-redux";
@@ -11,6 +11,7 @@ import * as S from "./styles";
 import "react-toastify/dist/ReactToastify.css";
 
 function Product() {
+	const [quantity, setQuantity] = useState(1);
 	let { id } = useParams();
 	const url = `https://v2.api.noroff.dev/online-shop/${id}`;
 	const { data: product, isLoading, isError } = useApi(url);
@@ -77,9 +78,34 @@ function Product() {
 						</div>
 
 						<div className="product-cart">
+							<div>
+								<button
+									className="change-quantity"
+									onClick={() => setQuantity(Math.max(1, quantity - 1))}
+								>
+									-
+								</button>
+								<input
+									type="number"
+									value={quantity}
+									onChange={(e) => {
+										const value = parseInt(e.target.value);
+										if (value >= 1 && value <= 999) {
+											setQuantity(value);
+										}
+									}}
+								/>
+								<button
+									className="change-quantity"
+									onClick={() => setQuantity(quantity + 1)}
+								>
+									+
+								</button>
+							</div>
 							<button
+								className="add-to-cart"
 								onClick={() => {
-									dispatch(addToCart(product));
+									dispatch(addToCart({ ...product, quantity }));
 									toast.success(`${product.title} added to cart!`, {
 										position: "bottom-right",
 										autoClose: 1000,
@@ -94,10 +120,11 @@ function Product() {
 							>
 								Add to cart <Icon iconName="addToCart" color="#1c1c1c" />
 							</button>
-							<hr />
 						</div>
-
-						<div className="product-description">{product.description}</div>
+						<div className="product-description">
+							<hr />
+							{product.description}
+						</div>
 					</div>
 				</S.Product>
 				<h2>Reviews</h2>
