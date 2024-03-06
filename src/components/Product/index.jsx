@@ -83,7 +83,7 @@ function Product() {
 									className="change-quantity"
 									onClick={() => setQuantity(Math.max(1, quantity - 1))}
 								>
-									-
+									<Icon iconName="remove" color="#E94E77" />
 								</button>
 								<input
 									type="number"
@@ -99,7 +99,7 @@ function Product() {
 									className="change-quantity"
 									onClick={() => setQuantity(quantity + 1)}
 								>
-									+
+									<Icon iconName="add" color="#C9F66F" />
 								</button>
 							</div>
 							<button

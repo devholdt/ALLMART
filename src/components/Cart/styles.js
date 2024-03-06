@@ -59,39 +59,36 @@ export const CartTitle = styled.div`
 
 export const CartQuantity = styled.div`
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 0.5em;
-
-	p {
-		padding: 0.4em 0.6em;
-		border-radius: 5px;
-		border: 1px solid ${(props) => props.theme.colors.white};
-		font-size: ${(props) => props.theme.fontSizes.small};
-	}
+	height: 40px;
 
 	button {
-		font-size: ${(props) => props.theme.fontSizes.large};
+		width: 40px;
 		border: none;
-		background-color: transparent;
+		font-size: ${(props) => props.theme.fontSizes.larger};
+		background-color: ${(props) => props.theme.colors.dark};
 		cursor: pointer;
-		padding: 0;
-		display: flex;
-		height: 17.5px;
-		width: 17.5px;
-		border-radius: 50%;
-		transition: all 0.1s ease-in-out;
-
-		&:hover {
-			box-shadow: ${(props) => props.theme.boxShadows.red};
-		}
 	}
 
-	button:last-child {
-		border-color: red;
+	input {
+		width: 40px;
+		text-align: center;
+		border: none;
+		font-size: ${(props) => props.theme.fontSizes.normal};
+		color: ${(props) => props.theme.colors.white};
+		background-color: ${(props) => props.theme.colors.darkAlt};
 
-		&:hover {
-			box-shadow: ${(props) => props.theme.boxShadows.primary};
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+		&[type="number"] {
+			appearance: textfield;
+		}
+
+		&:focus {
+			outline: none;
 		}
 	}
 `;

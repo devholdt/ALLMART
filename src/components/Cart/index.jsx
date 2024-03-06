@@ -41,7 +41,21 @@ function Cart() {
 							<button onClick={() => dispatch(removeFromCart(product))}>
 								<Icon iconName="remove" color="#E94E77" />
 							</button>
-							<p>x{product.quantity}</p>
+							<input
+								type="number"
+								value={product.quantity}
+								onChange={(e) => {
+									const value = parseInt(e.target.value);
+									if (value >= 1 && value <= 999) {
+										dispatch(
+											addToCart({
+												...product,
+												quantity: value - product.quantity,
+											})
+										);
+									}
+								}}
+							/>
 							<button
 								onClick={() => {
 									dispatch(addToCart({ ...product, quantity: 1 }));

@@ -15,11 +15,11 @@ import {
 	faChevronDown,
 	faCartPlus,
 	faTrashAlt,
-	faMinusCircle,
+	faMinus,
 	faCheck,
 	faCircleCheck,
 	faTimes,
-	faPlusCircle,
+	faPlus,
 	faCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -32,11 +32,11 @@ library.add(
 	faChevronDown,
 	faCartPlus,
 	faTrashAlt,
-	faMinusCircle,
+	faMinus,
 	faCheck,
 	faCircleCheck,
 	faTimes,
-	faPlusCircle,
+	faPlus,
 	faCaretDown
 );
 
@@ -53,11 +53,11 @@ const Icon = ({ iconName, color, ...props }) => {
 		fullStar: fullStar,
 		halfStar: halfStar,
 		emptyStar: emptyStar,
-		remove: faMinusCircle,
+		remove: faMinus,
 		check: faCheck,
 		circleCheck: faCircleCheck,
 		close: faTimes,
-		add: faPlusCircle,
+		add: faPlus,
 		caretDown: faCaretDown,
 	};
 

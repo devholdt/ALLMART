@@ -27,9 +27,11 @@ export const Container = styled.main`
 export const Product = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	padding: 1em;
 	gap: 1em;
-	padding-bottom: 3em;
-	border-bottom: 1px solid ${(props) => props.theme.colors.white};
+	background-color: ${(props) => props.theme.colors.black};
+	box-shadow: ${(props) => props.theme.boxShadows.white};
+	border-radius: 10px;
 
 	img {
 		width: 100%;
@@ -98,13 +100,17 @@ export const Product = styled.div`
 		gap: 1em;
 		height: 40px;
 
+		padding: 0.25em;
+		background-color: ${(props) => props.theme.colors.black};
+
 		div {
 			display: flex;
 
 			button {
 				width: 40px;
 				border: none;
-				font-size: ${(props) => props.theme.fontSizes.normal};
+				font-size: ${(props) => props.theme.fontSizes.larger};
+				background-color: ${(props) => props.theme.colors.dark};
 				cursor: pointer;
 			}
 
@@ -112,7 +118,9 @@ export const Product = styled.div`
 				width: 40px;
 				text-align: center;
 				border: none;
-				font-size: ${(props) => props.theme.fontSizes.large};
+				font-size: ${(props) => props.theme.fontSizes.normal};
+				color: ${(props) => props.theme.colors.white};
+				background-color: ${(props) => props.theme.colors.blackAlt};
 
 				&::-webkit-outer-spin-button,
 				&::-webkit-inner-spin-button {
@@ -156,6 +164,8 @@ export const ProductReview = styled.div`
 		background-color: ${(props) => props.theme.colors.black};
 		gap: 0.5em;
 		padding: 1em;
+		box-shadow: ${(props) => props.theme.boxShadows.white};
+		border-radius: 10px;
 
 		h3,
 		p {
