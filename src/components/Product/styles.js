@@ -85,19 +85,10 @@ export const Product = styled.div`
 		.product-rating {
 			display: flex;
 			align-items: center;
-			gap: 0.6em;
-
-			button {
-				padding: 0;
-				margin-left: 0.3em;
-				border: none;
-				background-color: transparent;
-				font-size: 1em;
-				cursor: pointer;
-			}
+			gap: 0.3em;
 
 			svg {
-				font-size: 0.8em;
+				transform: scale(0.9);
 			}
 		}
 	}

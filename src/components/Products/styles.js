@@ -119,6 +119,10 @@ export const ProductRating = styled.div`
 	flex-direction: column;
 	font-style: italic;
 
+	svg {
+		transform: scale(0.9);
+	}
+
 	span:last-child {
 		font-size: 0.9em;
 	}
