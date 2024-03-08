@@ -48,15 +48,15 @@ function Product() {
 				<h1>{product.title}</h1>
 				<S.Product>
 					<div>
-						<img src={product.image?.url} alt={product.title} />
-						<div className="product-tags">
+						<S.Image src={product.image?.url} alt={product.title} />
+						<S.Tags>
 							{product.tags?.map((tag) => {
 								return <span key={tag}>{tag} </span>;
 							})}
-						</div>
+						</S.Tags>
 					</div>
-					<div className="product-details">
-						<div className="product-top">
+					<S.Details>
+						<S.Top>
 							<div>
 								{product.price === product.discountedPrice ? (
 									<span className="regular-price">{product.price}kr</span>
@@ -75,9 +75,9 @@ function Product() {
 								</span>
 								{product.reviews ? product.reviews.length : 0} review(s)
 							</div>
-						</div>
+						</S.Top>
 
-						<div className="product-cart">
+						<S.Cart>
 							<QuantitySelector quantity={quantity} setQuantity={setQuantity} />
 							<button
 								className="add-to-cart"
@@ -91,31 +91,31 @@ function Product() {
 							>
 								Add to cart <Icon iconName="addToCart" color="#1c1c1c" />
 							</button>
-						</div>
-						<div className="product-description">
+						</S.Cart>
+						<div>
 							<hr />
-							{product.description}
 						</div>
-					</div>
+						{product.description}
+					</S.Details>
 				</S.Product>
 				<h2>Reviews</h2>
-				<S.ProductReview>
+				<S.Reviews>
 					{product.reviews?.length > 0 ? (
 						product.reviews?.map((review) => {
 							return (
-								<div className="product-review" key={review.id}>
+								<S.Review key={review.id}>
 									<h3>{review.username}</h3>
 									<p>{review.description}</p>
 									<div>
 										<Rating rating={review.rating} />
 									</div>
-								</div>
+								</S.Review>
 							);
 						})
 					) : (
 						<p>No reviews yet</p>
 					)}
-				</S.ProductReview>
+				</S.Reviews>
 			</S.Container>
 			<ToastContainer />
 		</main>
