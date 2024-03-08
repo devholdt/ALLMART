@@ -2,9 +2,9 @@ import React from "react";
 import { useApi } from "../../hooks/useApi";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Cart/cartSlice";
-import { toast, Zoom } from "react-toastify";
 import { Link } from "react-router-dom";
 import { Grid } from "react-loader-spinner";
+import { Container as ToastContainer, Emitter as ToastEmitter } from "../Toast";
 import Icon from "../Icon";
 import Rating from "../Rating";
 import * as S from "./styles";
@@ -35,10 +35,6 @@ function Products() {
 	if (isError) {
 		return <p>Error fetching products</p>;
 	}
-
-	const CloseButton = ({ closeToast }) => (
-		<Icon iconName="close" color="#fff" onClick={closeToast} />
-	);
 
 	return (
 		<main>
@@ -87,15 +83,9 @@ function Products() {
 								<button
 									onClick={() => {
 										dispatch(addToCart({ ...product, quantity: 1 }));
-										toast.success(`${product.title} added to cart!`, {
-											position: "bottom-right",
-											autoClose: 1000,
-											hideProgressBar: true,
-											closeOnClick: true,
-											pauseOnHover: false,
-											draggable: true,
-											progress: undefined,
-											icon: () => <Icon iconName="check" color="#c9f66f" />,
+										ToastEmitter({
+											type: "success",
+											message: `${product.title} added to cart`,
 										});
 									}}
 								>
@@ -105,11 +95,7 @@ function Products() {
 						</S.ProductBottom>
 					</S.ProductCard>
 				))}
-				<S.StyledToast
-					pauseOnFocusLoss={false}
-					closeButton={CloseButton}
-					transition={Zoom}
-				/>
+				<ToastContainer />
 			</S.Container>
 		</main>
 	);

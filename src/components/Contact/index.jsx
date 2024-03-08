@@ -1,9 +1,8 @@
 import React from "react";
-import { toast, Zoom } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import DocumentTitle from "../DocumentTitle";
-import Icon from "../Icon";
+import { Container as ToastContainer, Emitter as ToastEmitter } from "../Toast";
 import * as yup from "yup";
 import * as S from "./styles";
 
@@ -42,22 +41,16 @@ function Contact() {
 
 	const onSubmit = (data) => {
 		console.log(data);
-		toast.success(`Message sent successfully!`, {
-			position: "bottom-right",
+
+		ToastEmitter({
+			type: "success",
+			message: "Message sent successfully!",
 			autoClose: 3000,
 			hideProgressBar: false,
-			closeOnClick: true,
-			pauseOnHover: false,
-			draggable: true,
-			progress: undefined,
-			icon: () => <Icon iconName="check" color="#c9f66f" />,
 		});
+
 		reset();
 	};
-
-	const CloseButton = ({ closeToast }) => (
-		<Icon iconName="close" color="#fff" onClick={closeToast} />
-	);
 
 	return (
 		<main>
@@ -109,11 +102,7 @@ function Contact() {
 					<S.FormSubmit type="submit" />
 				</S.ContactForm>
 			</S.ContactContainer>
-			<S.StyledToast
-				pauseOnFocusLoss={false}
-				closeButton={CloseButton}
-				transition={Zoom}
-			/>
+			<ToastContainer />
 		</main>
 	);
 }

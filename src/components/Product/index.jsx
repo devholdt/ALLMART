@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import { useApi } from "../../hooks/useApi";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Cart/cartSlice";
-import { toast, Zoom } from "react-toastify";
 import { Grid } from "react-loader-spinner";
 import DocumentTitle from "../DocumentTitle";
+import { Container as ToastContainer, Emitter as ToastEmitter } from "../Toast";
 import Icon from "../Icon";
 import Rating from "../Rating";
 import * as S from "./styles";
@@ -109,15 +109,9 @@ function Product() {
 								className="add-to-cart"
 								onClick={() => {
 									dispatch(addToCart({ ...product, quantity }));
-									toast.success(`${product.title} added to cart!`, {
-										position: "bottom-right",
-										autoClose: 1000,
-										hideProgressBar: true,
-										closeOnClick: true,
-										pauseOnHover: false,
-										draggable: true,
-										progress: undefined,
-										icon: () => <Icon iconName="check" color="#c9f66f" />,
+									ToastEmitter({
+										type: "success",
+										message: `${product.title} x${quantity} added to cart`,
 									});
 								}}
 							>
@@ -149,11 +143,7 @@ function Product() {
 					)}
 				</S.ProductReview>
 			</S.Container>
-			<S.StyledToast
-				pauseOnFocusLoss={false}
-				closeButton={CloseButton}
-				transition={Zoom}
-			/>
+			<ToastContainer />
 		</main>
 	);
 }
