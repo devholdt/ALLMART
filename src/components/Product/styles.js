@@ -31,6 +31,10 @@ export const Product = styled.div`
 	background-color: ${(props) => props.theme.colors.black};
 	box-shadow: ${(props) => props.theme.boxShadows.white};
 	border-radius: 10px;
+
+	@media (max-width: 768px) {
+		grid-template-columns: 1fr;
+	}
 `;
 
 export const Image = styled.img`
@@ -56,6 +60,7 @@ export const Details = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
+	padding-bottom: 1em;
 `;
 
 export const Top = styled.div`
