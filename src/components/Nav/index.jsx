@@ -1,8 +1,8 @@
 import React from "react";
-import Icon from "../Icon";
 import { useSelector } from "react-redux";
 import { selectCartItemCount } from "../Cart/cartSlice";
 import { Link } from "react-router-dom";
+import Icon from "../Icon";
 import * as S from "./styles";
 
 function Nav() {
