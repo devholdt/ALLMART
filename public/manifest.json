@@ -4,5 +4,7 @@
 	"start_url": ".",
 	"display": "standalone",
 	"theme_color": "#c9f66f",
-	"background_color": "#1c1c1c"
+	"background_color": "#1c1c1c",
+	"orientation": "any",
+	"scope": "/"
 }
