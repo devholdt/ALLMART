@@ -1,9 +1,9 @@
 import React from "react";
 import Products from "../Products";
-import DocumentTitle from "../DocumentTitle";
+// import DocumentTitle from "../DocumentTitle";
 
 function Home() {
-	DocumentTitle("Everything you need");
+	// DocumentTitle("Everything you need");
 
 	return (
 		<main>

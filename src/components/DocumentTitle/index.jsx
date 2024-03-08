@@ -4,7 +4,7 @@ function DocumentTitle(title, prevailOnUnmount = false) {
 	const defaultTitle = useRef("ALLMART");
 
 	useEffect(() => {
-		document.title = `ALLMART | ${title}`;
+		document.title = `${title} - ALLMART`;
 	}, [title]);
 
 	useEffect(
