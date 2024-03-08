@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart, addToCart, clearCart } from "./cartSlice";
 import { checkout as checkoutCheckedOut } from "./checkedOutSlice";
 import { Link } from "react-router-dom";
+import QuantitySelector from "../QuantitySelector";
 import DocumentTitle from "../DocumentTitle";
-import Icon from "../Icon";
 import * as S from "./styles";
 
 function Cart() {
@@ -31,24 +31,21 @@ function Cart() {
 			<S.CartContainer ref={listRef}>
 				<h2>Receipt</h2>
 
-				<S.CartEmpty>{isCartEmpty && <p>The cart is empty</p>}</S.CartEmpty>
+				<div className="cart-empty">
+					{isCartEmpty && <p>The cart is empty</p>}
+				</div>
 
 				{cartProducts.map((product) => (
 					<S.CartItem key={product.id}>
-						<S.CartImage src={product.image.url} alt={product.title} />
-						<S.CartTitle>
+						<img src={product.image.url} alt={product.title} />
+						<div className="title">
 							<h3>{product.title}</h3>
 							<Link to={`/product/${product.id}`}>view</Link>
-						</S.CartTitle>
-						<S.CartQuantity>
-							<button onClick={() => dispatch(removeFromCart(product))}>
-								<Icon iconName="remove" color="#E94E77" />
-							</button>
-							<input
-								type="number"
-								value={product.quantity}
-								onChange={(e) => {
-									const value = parseInt(e.target.value);
+						</div>
+						<div className="quantity-selector">
+							<QuantitySelector
+								quantity={product.quantity}
+								setQuantity={(value) => {
 									if (value >= 1 && value <= 999) {
 										dispatch(
 											addToCart({
@@ -56,21 +53,17 @@ function Cart() {
 												quantity: value - product.quantity,
 											})
 										);
+									} else if (value < 1) {
+										dispatch(removeFromCart(product));
 									}
 								}}
+								allowZero={true}
 							/>
-							<button
-								onClick={() => {
-									dispatch(addToCart({ ...product, quantity: 1 }));
-								}}
-							>
-								<Icon iconName="add" color="#C9F66F" />
-							</button>
-						</S.CartQuantity>
+						</div>
 					</S.CartItem>
 				))}
 
-				<S.CartBottom>
+				<div className="cart-bottom">
 					<button
 						className="empty-cart"
 						style={{
@@ -99,7 +92,7 @@ function Cart() {
 							</button>
 						</Link>
 					</div>
-				</S.CartBottom>
+				</div>
 			</S.CartContainer>
 		</main>
 	);

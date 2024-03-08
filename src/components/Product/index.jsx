@@ -4,8 +4,9 @@ import { useApi } from "../../hooks/useApi";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Cart/cartSlice";
 import { Grid } from "react-loader-spinner";
-import DocumentTitle from "../DocumentTitle";
 import { Container as ToastContainer, Emitter as ToastEmitter } from "../Toast";
+import QuantitySelector from "../QuantitySelector";
+import DocumentTitle from "../DocumentTitle";
 import Icon from "../Icon";
 import Rating from "../Rating";
 import * as S from "./styles";
@@ -40,10 +41,6 @@ function Product() {
 	if (isError) {
 		return <p>Error fetching product</p>;
 	}
-
-	const CloseButton = ({ closeToast }) => (
-		<Icon iconName="close" color="#fff" onClick={closeToast} />
-	);
 
 	return (
 		<main>
@@ -81,30 +78,7 @@ function Product() {
 						</div>
 
 						<div className="product-cart">
-							<div>
-								<button
-									className="change-quantity"
-									onClick={() => setQuantity(Math.max(1, quantity - 1))}
-								>
-									<Icon iconName="remove" color="#E94E77" />
-								</button>
-								<input
-									type="number"
-									value={quantity}
-									onChange={(e) => {
-										const value = parseInt(e.target.value);
-										if (value >= 1 && value <= 999) {
-											setQuantity(value);
-										}
-									}}
-								/>
-								<button
-									className="change-quantity"
-									onClick={() => setQuantity(quantity + 1)}
-								>
-									<Icon iconName="add" color="#C9F66F" />
-								</button>
-							</div>
+							<QuantitySelector quantity={quantity} setQuantity={setQuantity} />
 							<button
 								className="add-to-cart"
 								onClick={() => {
