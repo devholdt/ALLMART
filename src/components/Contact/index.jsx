@@ -2,11 +2,14 @@ import React from "react";
 import { toast, Zoom } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import DocumentTitle from "../DocumentTitle";
 import Icon from "../Icon";
 import * as yup from "yup";
 import * as S from "./styles";
 
 function Contact() {
+	DocumentTitle("Contact");
+
 	const schema = yup
 		.object({
 			fullName: yup

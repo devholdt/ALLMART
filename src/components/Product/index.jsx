@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../Cart/cartSlice";
 import { toast, Zoom } from "react-toastify";
 import { Grid } from "react-loader-spinner";
+import DocumentTitle from "../DocumentTitle";
 import Icon from "../Icon";
 import Rating from "../Rating";
 import * as S from "./styles";
@@ -16,6 +17,8 @@ function Product() {
 	const url = `https://v2.api.noroff.dev/online-shop/${id}`;
 	const { data: product, isLoading, isError } = useApi(url);
 	const dispatch = useDispatch();
+
+	DocumentTitle(product?.title);
 
 	if (isLoading || !product) {
 		return (

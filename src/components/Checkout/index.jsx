@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import DocumentTitle from "../DocumentTitle";
 import Icon from "../Icon";
 import Logo from "../Logo";
 import * as S from "./styles";
@@ -10,6 +11,8 @@ function Checkout() {
 		(state) => state.checkedOut
 	);
 	const navigate = useNavigate();
+
+	DocumentTitle("Checkout");
 
 	useEffect(() => {
 		if (checkedOutProducts.length === 0) {

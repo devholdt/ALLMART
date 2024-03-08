@@ -4,10 +4,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart, addToCart, clearCart } from "./cartSlice";
 import { checkout as checkoutCheckedOut } from "./checkedOutSlice";
 import { Link } from "react-router-dom";
+import DocumentTitle from "../DocumentTitle";
 import Icon from "../Icon";
 import * as S from "./styles";
 
 function Cart() {
+	DocumentTitle("Cart");
+
 	const { products: cartProducts, totalCost } = useSelector(
 		(state) => state.cart
 	);
