@@ -41,34 +41,34 @@ function Products() {
 			<h2>Products</h2>
 			<S.Container>
 				{data.map((product) => (
-					<S.ProductCard key={product.id}>
-						<S.ProductTop>
-							<S.ProductTitle>
+					<S.Product key={product.id}>
+						<S.Header>
+							<S.Title>
 								<h3>{product.title}</h3>
 								<Link to={`/product/${product.id}`}>view</Link>
-							</S.ProductTitle>
-							<S.ProductTags>
+							</S.Title>
+							<S.Tags>
 								{product.tags.map((tag) => {
 									return (
-										<S.ProductTag key={tag} className="product-tag">
+										<S.Tag key={tag} className="product-tag">
 											{tag}{" "}
-										</S.ProductTag>
+										</S.Tag>
 									);
 								})}
-							</S.ProductTags>
-							<S.ProductImage src={product.image?.url} alt={product.title} />
-						</S.ProductTop>
+							</S.Tags>
+							<S.Image src={product.image?.url} alt={product.title} />
+						</S.Header>
 
-						<S.ProductDescription>{product.description}</S.ProductDescription>
+						<S.Description>{product.description}</S.Description>
 
-						<S.ProductBottom>
+						<S.Bottom>
 							<S.ProductRating>
 								<span>
 									<Rating rating={product.rating} />
 								</span>
 								<span>{product.reviews.length} review(s)</span>
 							</S.ProductRating>
-							<S.ProductPrice>
+							<S.Price>
 								{product.price === product.discountedPrice ? (
 									<span>{product.price}kr</span>
 								) : (
@@ -91,12 +91,12 @@ function Products() {
 								>
 									<Icon iconName="addToCart" color="#1c1c1c" />
 								</button>
-							</S.ProductPrice>
-						</S.ProductBottom>
-					</S.ProductCard>
+							</S.Price>
+						</S.Bottom>
+					</S.Product>
 				))}
-				<ToastContainer />
 			</S.Container>
+			<ToastContainer />
 		</main>
 	);
 }

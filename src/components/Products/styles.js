@@ -26,7 +26,7 @@ export const Container = styled.div`
 	}
 `;
 
-export const ProductCard = styled.div`
+export const Product = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -36,13 +36,13 @@ export const ProductCard = styled.div`
 	padding: 0 1em;
 `;
 
-export const ProductTop = styled.div`
+export const Header = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 `;
 
-export const ProductTitle = styled.div`
+export const Title = styled.div`
 	display: flex;
 	justify-content: space-between;
 	margin-top: 1em;
@@ -60,13 +60,13 @@ export const ProductTitle = styled.div`
 	}
 `;
 
-export const ProductTags = styled.div`
+export const Tags = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	gap: 4px;
 `;
 
-export const ProductTag = styled.span`
+export const Tag = styled.span`
 	font-size: 0.8em;
 	background-color: ${(props) => props.theme.colors.primary};
 	color: ${(props) => props.theme.colors.black};
@@ -74,7 +74,7 @@ export const ProductTag = styled.span`
 	border-radius: 6px;
 `;
 
-export const ProductImage = styled.img`
+export const Image = styled.img`
 	height: 100px;
 	width: 100%;
 	object-fit: cover;
@@ -85,7 +85,7 @@ export const ProductImage = styled.img`
 	}
 `;
 
-export const ProductDescription = styled.p`
+export const Description = styled.p`
 	width: 100%;
 	margin: 0;
 
@@ -105,7 +105,7 @@ export const ProductDescription = styled.p`
 	}
 `;
 
-export const ProductBottom = styled.div`
+export const Bottom = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -127,7 +127,7 @@ export const ProductRating = styled.div`
 	}
 `;
 
-export const ProductPrice = styled.div`
+export const Price = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;

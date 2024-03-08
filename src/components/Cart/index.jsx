@@ -28,15 +28,13 @@ function Cart() {
 		<main>
 			<h1>Cart</h1>
 
-			<S.CartContainer ref={listRef}>
-				<h2>Receipt</h2>
+			<S.Container ref={listRef}>
+				<S.Heading>Receipt</S.Heading>
 
-				<div className="cart-empty">
-					{isCartEmpty && <p>The cart is empty</p>}
-				</div>
+				<S.Empty>{isCartEmpty && <p>The cart is empty</p>}</S.Empty>
 
 				{cartProducts.map((product) => (
-					<S.CartItem key={product.id}>
+					<S.Item key={product.id}>
 						<img src={product.image.url} alt={product.title} />
 						<div className="title">
 							<h3>{product.title}</h3>
@@ -60,10 +58,10 @@ function Cart() {
 								allowZero={true}
 							/>
 						</div>
-					</S.CartItem>
+					</S.Item>
 				))}
 
-				<div className="cart-bottom">
+				<S.Bottom>
 					<button
 						className="empty-cart"
 						style={{
@@ -92,8 +90,8 @@ function Cart() {
 							</button>
 						</Link>
 					</div>
-				</div>
-			</S.CartContainer>
+				</S.Bottom>
+			</S.Container>
 		</main>
 	);
 }

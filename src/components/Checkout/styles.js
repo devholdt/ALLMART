@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CheckoutContainer = styled.div`
+export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -13,7 +13,7 @@ export const CheckoutContainer = styled.div`
 	padding: 2em 1em 1em;
 `;
 
-export const CheckoutHeader = styled.div`
+export const Header = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -34,7 +34,7 @@ export const CheckoutHeader = styled.div`
 	}
 `;
 
-export const CheckoutItems = styled.div`
+export const Items = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
@@ -65,7 +65,7 @@ export const CheckoutItems = styled.div`
 	}
 `;
 
-export const CheckoutBottom = styled.div`
+export const Bottom = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -89,7 +89,6 @@ export const CheckoutBottom = styled.div`
 		border: none;
 		text-transform: uppercase;
 		font-weight: bold;
-		border-radius: 5px;
 		cursor: pointer;
 		width: 100%;
 		padding: 1em;

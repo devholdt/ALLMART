@@ -56,23 +56,23 @@ function Contact() {
 		<main>
 			<h1>Contact</h1>
 
-			<S.ContactContainer>
-				<S.ContactTitle>
+			<S.Container>
+				<S.Title>
 					<h2>Get in touch</h2>
 					<p>Send us a question or inquiry</p>
-				</S.ContactTitle>
-				<S.ContactForm onSubmit={handleSubmit(onSubmit)}>
+				</S.Title>
+				<S.Form onSubmit={handleSubmit(onSubmit)}>
 					<label htmlFor="fullName">Full Name</label>
-					<S.FormInput
+					<S.Input
 						id="fullName"
 						type="text"
 						placeholder="Full name"
 						{...register("fullName", { required: true, min: 3 })}
 					/>
-					<S.FormError>{errors.fullName?.message}</S.FormError>
+					<S.Error>{errors.fullName?.message}</S.Error>
 
 					<label htmlFor="email">Email</label>
-					<S.FormInput
+					<S.Input
 						id="email"
 						type="text"
 						placeholder="Email"
@@ -80,28 +80,28 @@ function Contact() {
 							required: true,
 						})}
 					/>
-					<S.FormError>{errors.email?.message}</S.FormError>
+					<S.Error>{errors.email?.message}</S.Error>
 
 					<label htmlFor="subject">Subject</label>
-					<S.FormInput
+					<S.Input
 						id="subject"
 						type="text"
 						placeholder="Subject"
 						{...register("subject", { required: true })}
 					/>
-					<S.FormError>{errors.subject?.message}</S.FormError>
+					<S.Error>{errors.subject?.message}</S.Error>
 
 					<label htmlFor="message">Message</label>
-					<S.FormTextarea
+					<S.Textarea
 						id="message"
 						placeholder="Message"
 						{...register("message", { required: true, min: 3 })}
 					/>
-					<S.FormError>{errors.message?.message}</S.FormError>
+					<S.Error>{errors.message?.message}</S.Error>
 
-					<S.FormSubmit type="submit" />
-				</S.ContactForm>
-			</S.ContactContainer>
+					<S.Submit type="submit" />
+				</S.Form>
+			</S.Container>
 			<ToastContainer />
 		</main>
 	);

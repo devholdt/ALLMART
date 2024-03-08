@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContactContainer = styled.div`
+export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin: auto;
@@ -11,7 +11,7 @@ export const ContactContainer = styled.div`
 	max-width: 400px;
 `;
 
-export const ContactTitle = styled.div`
+export const Title = styled.div`
 	display: flex;
 	flex-direction: column;
 	border-bottom: 2px solid ${(props) => props.theme.colors.white};
@@ -29,7 +29,7 @@ export const ContactTitle = styled.div`
 	}
 `;
 
-export const ContactForm = styled.form`
+export const Form = styled.form`
 	display: flex;
 	flex-direction: column;
 	padding: 0 0.5em 0.5em;
@@ -40,34 +40,31 @@ export const ContactForm = styled.form`
 	}
 `;
 
-export const FormInput = styled.input`
+export const Input = styled.input`
 	padding: 0.5em;
 	font-size: 1em;
 	border: 1px solid #ddd;
-	border-radius: 5px;
 `;
 
-export const FormTextarea = styled.textarea`
+export const Textarea = styled.textarea`
 	font-family: inherit;
 	padding: 0.5em;
 	font-size: 1em;
 	border: 1px solid #ddd;
-	border-radius: 5px;
 	height: 150px;
 	resize: none;
 `;
 
-export const FormError = styled.p`
+export const Error = styled.p`
 	color: ${(props) => props.theme.colors.red};
 	margin-top: 4px;
 	margin-bottom: 1em;
 `;
 
-export const FormSubmit = styled.input`
+export const Submit = styled.input`
 	background-color: ${(props) => props.theme.colors.primary};
 	color: ${(props) => props.theme.colors.dark};
 	border: none;
-	border-radius: 5px;
 	padding: 0.5em;
 	font-size: 1em;
 	font-weight: 600;

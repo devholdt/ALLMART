@@ -24,16 +24,16 @@ function Checkout() {
 		<main>
 			<h1>Checkout</h1>
 
-			<S.CheckoutContainer>
-				<S.CheckoutHeader>
+			<S.Container>
+				<S.Header>
 					<Logo color="black" size="140px" />
 					<div>
 						<h2>Thank you for shopping with us!</h2>
 						<Icon iconName="circleCheck" color="#B0D65F" size="2xl" />
 					</div>
-				</S.CheckoutHeader>
+				</S.Header>
 
-				<S.CheckoutItems>
+				<S.Items>
 					{checkedOutProducts.map((product) => (
 						<div className="item" key={product.id}>
 							<h3>{product.title}</h3>
@@ -43,9 +43,9 @@ function Checkout() {
 							</div>
 						</div>
 					))}
-				</S.CheckoutItems>
+				</S.Items>
 
-				<S.CheckoutBottom>
+				<S.Bottom>
 					<p>
 						Total: <span className="total-cost">{totalCost.toFixed(2)}kr</span>
 					</p>
@@ -53,8 +53,8 @@ function Checkout() {
 					<Link to="/">
 						<button>Confirm</button>
 					</Link>
-				</S.CheckoutBottom>
-			</S.CheckoutContainer>
+				</S.Bottom>
+			</S.Container>
 		</main>
 	);
 }
