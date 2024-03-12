@@ -21,6 +21,7 @@ import {
 	faTimes,
 	faPlus,
 	faCaretDown,
+	faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -37,7 +38,8 @@ library.add(
 	faCircleCheck,
 	faTimes,
 	faPlus,
-	faCaretDown
+	faCaretDown,
+	faMagnifyingGlass
 );
 
 const Icon = ({ iconName, color, ...props }) => {
@@ -59,6 +61,7 @@ const Icon = ({ iconName, color, ...props }) => {
 		close: faTimes,
 		add: faPlus,
 		caretDown: faCaretDown,
+		search: faMagnifyingGlass,
 	};
 
 	const icon = iconMap[iconName];

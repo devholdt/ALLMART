@@ -153,7 +153,7 @@ export const Price = styled.div`
 		justify-content: center;
 		align-items: center;
 		border: none;
-		background-color: ${(props) => props.theme.colors.primary};
+		background-color: ${(props) => props.theme.colors.primaryAlt};
 		width: 33px;
 		height: 33px;
 		font-size: 1em;

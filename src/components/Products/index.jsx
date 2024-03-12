@@ -5,6 +5,7 @@ import { addToCart } from "../Cart/cartSlice";
 import { Link } from "react-router-dom";
 import { Grid } from "react-loader-spinner";
 import { Container as ToastContainer, Emitter as ToastEmitter } from "../Toast";
+import Search from "../Search";
 import Icon from "../Icon";
 import Rating from "../Rating";
 import * as S from "./styles";
@@ -39,6 +40,7 @@ function Products() {
 	return (
 		<main>
 			<h2>Products</h2>
+			<Search />
 			<S.Container>
 				{data.map((product) => (
 					<S.Product key={product.id}>
