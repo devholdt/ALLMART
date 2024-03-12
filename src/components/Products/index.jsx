@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useApi } from "../../hooks/useApi";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Cart/cartSlice";
@@ -15,6 +15,17 @@ function Products() {
 	const url = "https://v2.api.noroff.dev/online-shop";
 	const { data, isLoading, isError } = useApi(url);
 	const dispatch = useDispatch();
+
+	const [filteredData, setFilteredData] = useState([]);
+
+	const handleSearch = (e) => {
+		e.preventDefault();
+		const searchTerm = e.target.value.trim().toLowerCase();
+		const results = data.filter((item) =>
+			item.title.toLowerCase().includes(searchTerm)
+		);
+		setFilteredData(results);
+	};
 
 	if (isLoading || !data) {
 		return (
@@ -37,12 +48,14 @@ function Products() {
 		return <p>Error fetching products</p>;
 	}
 
+	const productsToDisplay = filteredData.length > 0 ? filteredData : data;
+
 	return (
 		<main>
 			<h2>Products</h2>
-			<Search />
+			<Search onSearch={handleSearch} />
 			<S.Container>
-				{data.map((product) => (
+				{productsToDisplay.map((product) => (
 					<S.Product key={product.id}>
 						<S.Header>
 							<S.Title>
