@@ -23,18 +23,20 @@ function Product() {
 
 	if (isLoading || !product) {
 		return (
-			<S.Loader>
-				<Grid
-					visible={true}
-					height="80"
-					width="80"
-					color="#c9f66f"
-					ariaLabel="grid-loading"
-					radius="12.5"
-					wrapperStyle={{}}
-					wrapperClass="grid-wrapper"
-				/>
-			</S.Loader>
+			<main>
+				<S.Loader>
+					<Grid
+						visible={true}
+						height="80"
+						width="80"
+						color="#c9f66f"
+						ariaLabel="grid-loading"
+						radius="12.5"
+						wrapperStyle={{}}
+						wrapperClass="grid-wrapper"
+					/>
+				</S.Loader>
+			</main>
 		);
 	}
 

@@ -6,12 +6,24 @@ function Search({ data, setFilteredData }) {
 	const [searchTerm, setSearchTerm] = useState("");
 
 	useEffect(() => {
-		const term = searchTerm.trim().toLowerCase();
 		const results = data.filter((product) =>
-			product.title.toLowerCase().includes(term)
+			product.title.toLowerCase().includes(searchTerm.toLowerCase())
 		);
+
 		setFilteredData(results);
 	}, [searchTerm, data, setFilteredData]);
+
+	const handleChange = (event) => {
+		setSearchTerm(event.target.value);
+	};
+
+	// useEffect(() => {
+	// 	const term = searchTerm.trim().toLowerCase();
+	// 	const results = data.filter((product) =>
+	// 		product.title.toLowerCase().includes(term)
+	// 	);
+	// 	setFilteredData(results);
+	// }, [searchTerm, data, setFilteredData]);
 
 	return (
 		<>
@@ -22,7 +34,7 @@ function Search({ data, setFilteredData }) {
 					id="searchInput"
 					placeholder="Search..."
 					aria-label="Search"
-					onChange={(event) => setSearchTerm(event.target.value)}
+					onChange={handleChange}
 				/>
 				<S.Button>
 					<Icon iconName="search" color="dark" />

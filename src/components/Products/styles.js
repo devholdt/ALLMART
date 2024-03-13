@@ -88,15 +88,14 @@ export const Image = styled.img`
 `;
 
 export const Description = styled.p`
-	width: 100%;
-	height: 100%;
+	height: 3em;
 	margin-top: 0;
-
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	line-height: 1.5em;
 `;
 
 export const Bottom = styled.div`
