@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Icon from "../Icon";
 import * as S from "./styles";
 
-function Search({ onSearch }) {
+function Search({ data, setFilteredData }) {
+	const [searchTerm, setSearchTerm] = useState("");
+
+	useEffect(() => {
+		const term = searchTerm.trim().toLowerCase();
+		const results = data.filter((product) =>
+			product.title.toLowerCase().includes(term)
+		);
+		setFilteredData(results);
+	}, [searchTerm, data, setFilteredData]);
+
 	return (
 		<>
 			<S.Container>
@@ -12,7 +22,7 @@ function Search({ onSearch }) {
 					id="searchInput"
 					placeholder="Search..."
 					aria-label="Search"
-					onChange={onSearch}
+					onChange={(event) => setSearchTerm(event.target.value)}
 				/>
 				<S.Button>
 					<Icon iconName="search" color="dark" />

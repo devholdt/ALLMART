@@ -18,15 +18,6 @@ function Products() {
 
 	const [filteredData, setFilteredData] = useState([]);
 
-	const handleSearch = (e) => {
-		e.preventDefault();
-		const searchTerm = e.target.value.trim().toLowerCase();
-		const results = data.filter((item) =>
-			item.title.toLowerCase().includes(searchTerm)
-		);
-		setFilteredData(results);
-	};
-
 	if (isLoading || !data) {
 		return (
 			<S.Loader>
@@ -53,7 +44,7 @@ function Products() {
 	return (
 		<main>
 			<h2>Products</h2>
-			<Search onSearch={handleSearch} />
+			<Search data={data} setFilteredData={setFilteredData} />
 			<S.Container>
 				{productsToDisplay.map((product) => (
 					<S.Product key={product.id}>
