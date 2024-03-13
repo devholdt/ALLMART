@@ -45,6 +45,7 @@ export const Header = styled.div`
 export const Title = styled.div`
 	display: flex;
 	justify-content: space-between;
+	height: 60px;
 	margin-top: 1em;
 	margin-bottom: 0.2em;
 
@@ -53,6 +54,7 @@ export const Title = styled.div`
 	}
 
 	a {
+		height: fit-content;
 		color: ${(props) => props.theme.colors.primary};
 		font-style: italic;
 		text-decoration: none;
@@ -87,22 +89,14 @@ export const Image = styled.img`
 
 export const Description = styled.p`
 	width: 100%;
-	margin: 0;
+	height: 100%;
+	margin-top: 0;
 
-	button {
-		display: block;
-		margin-top: 0.2em;
-		margin-left: 50%;
-		float: right;
-		border: none;
-		background-color: transparent;
-		color: ${(props) => props.theme.colors.primary};
-		padding: 0;
-		font-size: 1em;
-		text-transform: lowercase;
-		font-style: italic;
-		cursor: pointer;
-	}
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
 `;
 
 export const Bottom = styled.div`
