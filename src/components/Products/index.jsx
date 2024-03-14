@@ -14,9 +14,8 @@ import "react-toastify/dist/ReactToastify.css";
 function Products() {
 	const url = "https://v2.api.noroff.dev/online-shop";
 	const { data, isLoading, isError } = useApi(url);
-	const dispatch = useDispatch();
-
 	const [filteredData, setFilteredData] = useState([]);
+	const dispatch = useDispatch();
 
 	if (isLoading || !data) {
 		return (
