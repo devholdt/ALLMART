@@ -17,7 +17,7 @@ function Products() {
 	const [filteredData, setFilteredData] = useState([]);
 	const dispatch = useDispatch();
 
-	if (isLoading || !data) {
+	if (isLoading) {
 		return (
 			<main>
 				<S.Loader>
@@ -37,7 +37,11 @@ function Products() {
 	}
 
 	if (isError) {
-		return <p>Error fetching products</p>;
+		return (
+			<main>
+				<p>Error fetching products</p>;
+			</main>
+		);
 	}
 
 	return (
