@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import Icon from "../Icon";
 import * as S from "./styles";
 
+import Sidebar from "../Sidebar";
+
 function Nav() {
 	const cartCount = useSelector(selectCartItemCount);
 
@@ -19,10 +21,10 @@ function Nav() {
 	return (
 		<nav>
 			<S.List>
-				<S.Item>
+				<S.Item className="menu-item">
 					<Link to="/">Home</Link>
 				</S.Item>
-				<S.Item>
+				<S.Item className="menu-item">
 					<Link to="/contact">Contact</Link>
 				</S.Item>
 				<S.Item>
@@ -33,6 +35,9 @@ function Nav() {
 						</S.CartIcon>
 					</Link>
 				</S.Item>
+				<div className="menu-sidebar">
+					<Sidebar />
+				</div>
 			</S.List>
 		</nav>
 	);

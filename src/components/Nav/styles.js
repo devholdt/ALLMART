@@ -3,10 +3,25 @@ import styled from "styled-components";
 export const List = styled.ul`
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	gap: 1rem;
+
+	.menu-sidebar {
+		display: none;
+	}
+
+	@media (max-width: 768px) {
+		.menu-sidebar {
+			display: block;
+		}
+
+		.menu-item {
+			display: none;
+		}
+	}
 `;
 
 export const Item = styled.li`
@@ -39,6 +54,10 @@ export const CartIcon = styled.div`
 	width: 36px;
 	height: 36px;
 	margin-left: 1em;
+
+	@media (max-width: 768px) {
+		margin-left: 0.5em;
+	}
 `;
 
 export const CartCounter = styled.span`
