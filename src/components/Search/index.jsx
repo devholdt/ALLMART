@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Icon from "../Icon";
 import * as S from "./styles";
 
 function Search({ data, setFilteredData }) {
 	const [searchTerm, setSearchTerm] = useState("");
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		const results = data.filter((product) =>
@@ -17,13 +19,17 @@ function Search({ data, setFilteredData }) {
 		setSearchTerm(event.target.value);
 	};
 
-	// useEffect(() => {
-	// 	const term = searchTerm.trim().toLowerCase();
-	// 	const results = data.filter((product) =>
-	// 		product.title.toLowerCase().includes(term)
-	// 	);
-	// 	setFilteredData(results);
-	// }, [searchTerm, data, setFilteredData]);
+	const handleSearch = (event) => {
+		if (event.key === "Enter" && searchTerm !== "") {
+			const results = data.filter((product) =>
+				product.title.toLowerCase().includes(searchTerm.toLowerCase())
+			);
+
+			if (results.length > 0) {
+				navigate(`/product/${results[0].id}`);
+			}
+		}
+	};
 
 	return (
 		<>
@@ -35,8 +41,9 @@ function Search({ data, setFilteredData }) {
 					placeholder="Search..."
 					aria-label="Search"
 					onChange={handleChange}
+					onKeyDown={handleSearch}
 				/>
-				<S.Button>
+				<S.Button onClick={handleSearch}>
 					<Icon iconName="search" color="dark" />
 				</S.Button>
 			</S.Container>

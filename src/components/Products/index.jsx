@@ -46,7 +46,7 @@ function Products() {
 			<Search data={data} setFilteredData={setFilteredData} />
 			<S.Container>
 				{filteredData.length === 0 ? (
-					<p>No products found</p>
+					<p>No products found. Please try a different query.</p>
 				) : (
 					filteredData.map((product) => (
 						<S.Product key={product.id}>
