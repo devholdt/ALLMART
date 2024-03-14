@@ -11,6 +11,7 @@ export function Container(autoClose = 1000, hideProgressBar = true) {
 		<S.StyledToast
 			position="bottom-right"
 			autoClose={autoClose}
+			limit={3}
 			hideProgressBar={hideProgressBar}
 			closeOnClick={true}
 			pauseOnHover={false}
@@ -26,7 +27,7 @@ export function Container(autoClose = 1000, hideProgressBar = true) {
 export function Emitter({
 	type,
 	message,
-	autoClose = 1000,
+	autoClose = 100000,
 	hideProgressBar = true,
 }) {
 	const options = {

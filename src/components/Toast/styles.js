@@ -10,6 +10,11 @@ export const StyledToast = styled(ToastContainer).attrs({
 		color: ${(props) => props.theme.colors.white};
 		background-color: ${(props) => props.theme.colors.black};
 		box-shadow: ${(props) => props.theme.boxShadows.primaryInset};
+
+		@media (max-width: 480px) {
+			box-shadow: none;
+			border: 1px solid ${(props) => props.theme.colors.blackAlt};
+		}
 	}
 
 	.body {

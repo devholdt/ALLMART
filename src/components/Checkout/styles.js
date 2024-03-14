@@ -61,7 +61,9 @@ export const Items = styled.div`
 
 	.item div {
 		display: flex;
+		align-self: end;
 		gap: 0.5em;
+		margin-left: 1em;
 	}
 `;
 
