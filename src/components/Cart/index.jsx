@@ -35,10 +35,11 @@ function Cart() {
 
 				{cartProducts.map((product) => (
 					<S.Item key={product.id}>
-						<img src={product.image.url} alt={product.title} />
-						<div className="title">
-							<h3>{product.title}</h3>
-							<Link to={`/product/${product.id}`}>view</Link>
+						<div className="cart-left">
+							<img src={product.image.url} alt={product.title} />
+							<div className="title">
+								<Link to={`/product/${product.id}`}>{product.title}</Link>
+							</div>
 						</div>
 						<div className="quantity-selector">
 							<QuantitySelector

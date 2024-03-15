@@ -18,41 +18,50 @@ export const Empty = styled.div`
 
 export const Heading = styled.h2`
 	border-bottom: 2px solid ${(props) => props.theme.colors.white};
-	margin: 0 0.5em;
-	padding: 0 0.5em 0.5em;
+	margin: 0 0.25em;
+	padding: 0 0.25em 0.5em;
 `;
 
 export const Item = styled.div`
 	display: flex;
 	align-items: center;
-	padding: 1em;
+	padding: 1em 0.25em;
 	margin: 0 0.5em;
+	gap: 1em;
 	border-bottom: 1px dotted ${(props) => props.theme.colors.white};
 
-	img {
-		max-width: 80px;
-		width: 100%;
-		height: 50px;
-		object-fit: cover;
-	}
-
-	.title {
+	.cart-left {
 		display: flex;
 		align-items: center;
-		gap: 0.5em;
-		margin: 0 1em;
+		gap: 1em;
 		flex: 1;
 
-		h3 {
-			color: ${(props) => props.theme.colors.white};
-			font-size: ${(props) => props.theme.fontSizes.normal};
-			line-height: 20px;
+		img {
+			max-width: 100px;
+			width: 100%;
+			height: 50px;
+			object-fit: cover;
 		}
 
-		a {
-			color: ${(props) => props.theme.colors.primary};
-			font-style: italic;
-			text-decoration: none;
+		.title {
+			a {
+				color: ${(props) => props.theme.colors.white};
+			}
+		}
+
+		@media (max-width: 500px) {
+			gap: 0.5em;
+			font-size: ${(props) => props.theme.fontSizes.small};
+
+			img {
+				max-width: 50px;
+			}
+		}
+
+		@media (max-width: 330px) {
+			img {
+				display: none;
+			}
 		}
 	}
 
@@ -65,7 +74,8 @@ export const Item = styled.div`
 export const Bottom = styled.div`
 	display: flex;
 	justify-content: space-between;
-	padding: 1em 1.5em 0.5em;
+	margin: 0 0.25em;
+	padding: 1em 0.5em 0.5em;
 
 	.empty-cart {
 		display: flex;

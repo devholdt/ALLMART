@@ -101,6 +101,12 @@ export const Top = styled.div`
 		svg {
 			transform: scale(0.9);
 		}
+
+		@media (max-width: 330px) {
+			span {
+				display: none;
+			}
+		}
 	}
 `;
 
@@ -119,6 +125,10 @@ export const Cart = styled.div`
 		border: none;
 		background-color: ${(props) => props.theme.colors.primary};
 		cursor: pointer;
+
+		@media (max-width: 500px) {
+			font-size: 0.8em;
+		}
 	}
 `;
 

@@ -33,4 +33,11 @@ export const QuantitySelectorContainer = styled.div`
 			outline: none;
 		}
 	}
+
+	@media (max-width: 500px) {
+		button,
+		input {
+			width: 30px;
+		}
+	}
 `;

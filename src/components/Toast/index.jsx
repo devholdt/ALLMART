@@ -27,7 +27,7 @@ export function Container(autoClose = 1000, hideProgressBar = true) {
 export function Emitter({
 	type,
 	message,
-	autoClose = 100000,
+	autoClose = 1000,
 	hideProgressBar = true,
 }) {
 	const options = {

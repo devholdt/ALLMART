@@ -72,10 +72,12 @@ function Product() {
 								)}
 							</div>
 							<div className="product-rating">
-								<span>
+								<p>
 									<Rating rating={product.rating} />
+								</p>
+								<span>
+									{product.reviews ? product.reviews.length : 0} review(s)
 								</span>
-								{product.reviews ? product.reviews.length : 0} review(s)
 							</div>
 						</S.Top>
 
