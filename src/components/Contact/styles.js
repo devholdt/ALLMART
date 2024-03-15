@@ -7,7 +7,7 @@ export const Container = styled.div`
 	padding: 1em;
 	background-color: ${(props) => props.theme.colors.black};
 	box-shadow: ${(props) => props.theme.boxShadows.white};
-	border-radius: 10px;
+	border-radius: ${(props) => props.theme.borderRadius.smooth};
 	max-width: 400px;
 `;
 

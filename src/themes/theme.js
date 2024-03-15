@@ -25,4 +25,8 @@ export const theme = {
 		black: "0 0 5px rgba(0, 0, 0, 0.1)",
 		red: "0 0 5px rgba(233, 78, 119, 0.9)",
 	},
+	borderRadius: {
+		smooth: "8px",
+		round: "50%",
+	},
 };

@@ -8,7 +8,7 @@ export const Container = styled.div`
 	background-color: ${(props) => props.theme.colors.white};
 	color: ${(props) => props.theme.colors.black};
 	box-shadow: ${(props) => props.theme.boxShadows.primary};
-	border-radius: 10px;
+	border-radius: ${(props) => props.theme.borderRadius.smooth};
 	max-width: 400px;
 	padding: 2em 1em 1em;
 `;
@@ -30,7 +30,7 @@ export const Header = styled.div`
 
 	svg {
 		box-shadow: ${(props) => props.theme.boxShadows.black};
-		border-radius: 50%;
+		border-radius: ${(props) => props.theme.borderRadius.round};
 	}
 `;
 

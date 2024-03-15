@@ -30,7 +30,7 @@ export const Product = styled.div`
 	gap: 1em;
 	background-color: ${(props) => props.theme.colors.black};
 	box-shadow: ${(props) => props.theme.boxShadows.white};
-	border-radius: 10px;
+	border-radius: ${(props) => props.theme.borderRadius.smooth};
 
 	@media (max-width: 768px) {
 		grid-template-columns: 1fr;
@@ -56,7 +56,7 @@ export const Tags = styled.div`
 		background-color: ${(props) => props.theme.colors.primary};
 		color: ${(props) => props.theme.colors.black};
 		padding: 2px 8px 4px;
-		border-radius: 6px;
+		border-radius: ${(props) => props.theme.borderRadius.smooth};
 	}
 `;
 
@@ -146,7 +146,7 @@ export const Review = styled.div`
 	gap: 0.5em;
 	padding: 1em;
 	box-shadow: ${(props) => props.theme.boxShadows.white};
-	border-radius: 10px;
+	border-radius: ${(props) => props.theme.borderRadius.smooth};
 
 	h3,
 	p {

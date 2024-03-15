@@ -100,7 +100,7 @@ export const CartIcon = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border-radius: 50%;
+	border-radius: ${(props) => props.theme.borderRadius.round};
 	background-color: ${(props) => props.theme.colors.primary};
 	width: 36px;
 	height: 36px;
@@ -123,5 +123,5 @@ export const CartCounter = styled.span`
 	color: ${(props) => props.theme.colors.white};
 	width: 18px;
 	height: 18px;
-	border-radius: 50%;
+	border-radius: ${(props) => props.theme.borderRadius.round};
 `;

@@ -15,10 +15,11 @@ export const Container = styled.div`
 
 export const Input = styled.input`
 	border: 1px solid ${({ theme }) => theme.colors.blackAlt};
-	border-radius: 25px;
+	border-radius: ${(props) => props.theme.borderRadius.smooth};
 	padding-left: 20px;
 	font-size: 1em;
 	width: 100%;
+	height: 36px;
 
 	&:focus {
 		outline: none;
@@ -33,7 +34,7 @@ export const Button = styled.button`
 	height: 40px;
 	width: 40px;
 	border: none;
-	border-radius: 25px;
+	border-radius: ${(props) => props.theme.borderRadius.smooth};
 	background-color: ${({ theme }) => theme.colors.primaryAlt};
 	color: ${({ theme }) => theme.colors.dark};
 	font-weight: bold;

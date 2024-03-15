@@ -30,7 +30,7 @@ export const Product = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	border-radius: 8px;
+	border-radius: ${(props) => props.theme.borderRadius.smooth};
 	background-color: ${(props) => props.theme.colors.black};
 	box-shadow: ${(props) => props.theme.boxShadows.white};
 	padding: 0 1em;
@@ -73,7 +73,7 @@ export const Tag = styled.span`
 	background-color: ${(props) => props.theme.colors.primary};
 	color: ${(props) => props.theme.colors.black};
 	padding: 1px 6px 2px;
-	border-radius: 6px;
+	border-radius: ${(props) => props.theme.borderRadius.smooth};
 `;
 
 export const Image = styled.img`
@@ -150,7 +150,7 @@ export const Price = styled.div`
 		width: 33px;
 		height: 33px;
 		font-size: 1em;
-		border-radius: 50%;
+		border-radius: ${(props) => props.theme.borderRadius.round};
 		transition: all 0.2s ease-in-out;
 		cursor: pointer;
 
