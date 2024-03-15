@@ -25,7 +25,7 @@ function Nav() {
 	};
 
 	return (
-		<nav>
+		<S.Nav>
 			<S.List>
 				<S.Item className="menu-item">
 					<Link to="/">Home</Link>
@@ -69,7 +69,7 @@ function Nav() {
 					</S.Item>
 				</Menu>
 			</S.SidebarContainer>
-		</nav>
+		</S.Nav>
 	);
 }
 
