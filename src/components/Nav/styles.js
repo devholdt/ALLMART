@@ -45,6 +45,57 @@ export const Item = styled.li`
 	}
 `;
 
+export const SidebarContainer = styled.div`
+	display: none;
+
+	.bm-burger-button {
+		position: relative;
+		width: 40px;
+		height: 36px;
+
+		@media (max-width: 330px) {
+			width: 32px;
+			height: 32px;
+		}
+	}
+
+	.bm-burger-bars {
+		background: ${(props) => props.theme.colors.white};
+	}
+
+	.bm-burger-bars-hover {
+		background: ${(props) => props.theme.colors.primary};
+	}
+
+	.bm-cross {
+		background: ${(props) => props.theme.colors.white};
+	}
+
+	.bm-menu-wrap {
+		position: fixed;
+		top: 0;
+	}
+
+	.bm-menu {
+		background: ${(props) => props.theme.colors.black};
+		font-size: ${(props) => props.theme.fontSizes.large};
+		padding: 5em 0 0;
+
+		display: flex;
+		justify-content: center;
+		text-align: center;
+	}
+
+	.bm-item {
+		padding: 0.5em;
+		margin-bottom: 1em;
+	}
+
+	@media (max-width: 768px) {
+		display: block;
+	}
+`;
+
 export const CartIcon = styled.div`
 	display: flex;
 	justify-content: center;

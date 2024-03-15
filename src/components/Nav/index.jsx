@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectCartItemCount } from "../Cart/cartSlice";
 import { Link } from "react-router-dom";
 import Icon from "../Icon";
 import * as S from "./styles";
 
-import Sidebar from "../Sidebar";
+import { slide as Menu } from "react-burger-menu";
 
 function Nav() {
 	const cartCount = useSelector(selectCartItemCount);
@@ -18,6 +18,12 @@ function Nav() {
 		cartCounter = <S.CartCounter>{cartCount}</S.CartCounter>;
 	}
 
+	const [menuOpen, setMenuOpen] = useState(false);
+
+	const closeMenu = () => {
+		setMenuOpen(false);
+	};
+
 	return (
 		<nav>
 			<S.List>
@@ -27,7 +33,7 @@ function Nav() {
 				<S.Item className="menu-item">
 					<Link to="/contact">Contact</Link>
 				</S.Item>
-				<S.Item>
+				<S.Item className="menu-item">
 					<Link to="/cart">
 						<S.CartIcon>
 							<Icon iconName="cart" color="#1c1c1c" />
@@ -35,10 +41,34 @@ function Nav() {
 						</S.CartIcon>
 					</Link>
 				</S.Item>
-				<div className="menu-sidebar">
-					<Sidebar />
-				</div>
 			</S.List>
+			<S.SidebarContainer>
+				<Menu
+					right
+					isOpen={menuOpen}
+					onStateChange={({ isOpen }) => setMenuOpen(isOpen)}
+					width={"100%"}
+				>
+					<S.Item>
+						<Link onClick={closeMenu} to="/">
+							Home
+						</Link>
+					</S.Item>
+					<S.Item>
+						<Link onClick={closeMenu} to="/contact">
+							Contact
+						</Link>
+					</S.Item>
+					<S.Item>
+						<Link onClick={closeMenu} to="/cart">
+							<S.CartIcon>
+								<Icon iconName="cart" color="#1c1c1c" />
+								{cartCounter}
+							</S.CartIcon>
+						</Link>
+					</S.Item>
+				</Menu>
+			</S.SidebarContainer>
 		</nav>
 	);
 }
