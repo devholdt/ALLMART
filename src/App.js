@@ -1,21 +1,21 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-import Home from "./components/Home";
-import Contact from "./components/Contact";
-import Product from "./components/Product";
-import Cart from "./components/Cart";
-import Checkout from "./components/Checkout";
+import HomePage from "./components/HomePage";
+import ContactPage from "./components/ContactPage";
+import ProductPage from "./components/ProductPage";
+import CartPage from "./components/CartPage";
+import CheckoutPage from "./components/CheckoutPage";
 
 function App() {
 	return (
 		<Routes>
 			<Route path="/" element={<Layout />}>
-				<Route index element={<Home />} />
-				<Route path="/product/:id" element={<Product />} />
-				<Route path="/contact" element={<Contact />} />
-				<Route path="/cart" element={<Cart />} />
-				<Route path="/checkout" element={<Checkout />} />
+				<Route index element={<HomePage />} />
+				<Route path="/product/:id" element={<ProductPage />} />
+				<Route path="/contact" element={<ContactPage />} />
+				<Route path="/cart" element={<CartPage />} />
+				<Route path="/checkout" element={<CheckoutPage />} />
 			</Route>
 		</Routes>
 	);

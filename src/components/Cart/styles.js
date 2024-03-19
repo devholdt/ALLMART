@@ -9,6 +9,7 @@ export const Container = styled.div`
 	box-shadow: ${(props) => props.theme.boxShadows.white};
 	border-radius: ${(props) => props.theme.borderRadius.smooth};
 	max-width: 600px;
+	width: calc(100% - 1em);
 `;
 
 export const Empty = styled.div`

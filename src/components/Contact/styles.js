@@ -3,21 +3,25 @@ import styled from "styled-components";
 export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 400px;
+	width: calc(100% - 1em);
 	margin: auto;
 	padding: 1em;
 	background-color: ${(props) => props.theme.colors.black};
 	box-shadow: ${(props) => props.theme.boxShadows.white};
 	border-radius: ${(props) => props.theme.borderRadius.smooth};
-	max-width: 400px;
+	box-sizing: border-box;
 `;
 
 export const Title = styled.div`
 	display: flex;
 	flex-direction: column;
 	border-bottom: 2px solid ${(props) => props.theme.colors.white};
-	padding: 0.5em 0.5em 1em;
-	margin-top: 0;
 	margin-bottom: 1em;
+	padding-bottom: 1em;
+	width: 100%;
 
 	h2,
 	p {
@@ -32,8 +36,7 @@ export const Title = styled.div`
 export const Form = styled.form`
 	display: flex;
 	flex-direction: column;
-	padding: 0 0.5em 0.5em;
-	max-width: 100%;
+	width: 100%;
 
 	label {
 		margin-bottom: 4px;

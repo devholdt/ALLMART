@@ -21,41 +21,37 @@ function Checkout() {
 	}, [checkedOutProducts, navigate]);
 
 	return (
-		<main>
-			<h1>Checkout</h1>
+		<S.Container>
+			<S.Header>
+				<Logo color="black" size="140px" />
+				<div>
+					<h2>Thank you for shopping with us!</h2>
+					<Icon iconName="circleCheck" color="#B0D65F" size="2xl" />
+				</div>
+			</S.Header>
 
-			<S.Container>
-				<S.Header>
-					<Logo color="black" size="140px" />
-					<div>
-						<h2>Thank you for shopping with us!</h2>
-						<Icon iconName="circleCheck" color="#B0D65F" size="2xl" />
-					</div>
-				</S.Header>
-
-				<S.Items>
-					{checkedOutProducts.map((product) => (
-						<div className="item" key={product.id}>
-							<h3>{product.title}</h3>
-							<div>
-								<p>{product.discountedPrice}kr</p>
-								<p>x{product.quantity}</p>
-							</div>
+			<S.Items>
+				{checkedOutProducts.map((product) => (
+					<div className="item" key={product.id}>
+						<h3>{product.title}</h3>
+						<div>
+							<p>{product.discountedPrice}kr</p>
+							<p>x{product.quantity}</p>
 						</div>
-					))}
-				</S.Items>
+					</div>
+				))}
+			</S.Items>
 
-				<S.Bottom>
-					<p>
-						Total: <span className="total-cost">{totalCost.toFixed(2)}kr</span>
-					</p>
+			<S.Bottom>
+				<p>
+					Total: <span className="total-cost">{totalCost.toFixed(2)}kr</span>
+				</p>
 
-					<Link to="/">
-						<button>Confirm</button>
-					</Link>
-				</S.Bottom>
-			</S.Container>
-		</main>
+				<Link to="/">
+					<button>Confirm</button>
+				</Link>
+			</S.Bottom>
+		</S.Container>
 	);
 }
 

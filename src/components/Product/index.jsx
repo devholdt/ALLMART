@@ -49,7 +49,7 @@ function Product() {
 
 	return (
 		<S.Container>
-			<h1>{product.title}</h1>
+			<h2>{product.title}</h2>
 			<S.Product>
 				<div>
 					<S.Image src={product.image?.url} alt={product.title} />
@@ -102,13 +102,13 @@ function Product() {
 					{product.description}
 				</S.Details>
 			</S.Product>
-			<h2>Reviews</h2>
+			<h3>Reviews</h3>
 			<S.Reviews>
 				{product.reviews?.length > 0 ? (
 					product.reviews?.map((review) => {
 						return (
 							<S.Review key={review.id}>
-								<h3>{review.username}</h3>
+								<h4>{review.username}</h4>
 								<p>{review.description}</p>
 								<div>
 									<Rating rating={review.rating} />

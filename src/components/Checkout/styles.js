@@ -10,6 +10,7 @@ export const Container = styled.div`
 	box-shadow: ${(props) => props.theme.boxShadows.primary};
 	border-radius: ${(props) => props.theme.borderRadius.smooth};
 	max-width: 400px;
+	width: calc(100% - 1em);
 	padding: 2em 1em 1em;
 `;
 

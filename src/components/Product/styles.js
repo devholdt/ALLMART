@@ -12,14 +12,9 @@ export const Container = styled.div`
 	flex-direction: column;
 	max-width: 900px;
 	margin: auto;
-	padding: 0 1em;
+	padding: 1em;
 
-	h1,
-	h2 {
-		margin-bottom: 0.5em;
-	}
-
-	h2 {
+	h3 {
 		margin-top: 2em;
 	}
 `;

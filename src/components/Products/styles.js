@@ -10,6 +10,7 @@ export const Loader = styled.div`
 export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
+	padding: 1em;
 `;
 
 export const Products = styled.div`
