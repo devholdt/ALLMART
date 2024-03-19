@@ -8,47 +8,42 @@ import { Container as ToastContainer, Emitter as ToastEmitter } from "../Toast";
 import Search from "../Search";
 import Icon from "../Icon";
 import Rating from "../Rating";
+import Error from "../Error";
 import * as S from "./styles";
 import "react-toastify/dist/ReactToastify.css";
 
 function Products() {
 	const url = "https://v2.api.noroff.dev/online-shop";
-	const { data, isLoading, isError } = useApi(url);
+	const { data, isLoading, error } = useApi(url);
 	const [filteredData, setFilteredData] = useState([]);
 	const dispatch = useDispatch();
 
 	if (isLoading) {
 		return (
-			<main>
-				<S.Loader>
-					<Grid
-						visible={true}
-						height="80"
-						width="80"
-						color="#c9f66f"
-						ariaLabel="grid-loading"
-						radius="12.5"
-						wrapperStyle={{}}
-						wrapperClass="grid-wrapper"
-					/>
-				</S.Loader>
-			</main>
+			<S.Loader>
+				<Grid
+					visible={true}
+					height="80"
+					width="80"
+					color="#c9f66f"
+					ariaLabel="grid-loading"
+					radius="12.5"
+					wrapperStyle={{}}
+					wrapperClass="grid-wrapper"
+				/>
+			</S.Loader>
 		);
 	}
 
-	if (isError) {
-		return (
-			<main>
-				<p>Error fetching products</p>;
-			</main>
-		);
+	if (error) {
+		return <Error message="An error occurred when fetching products" />;
 	}
 
 	return (
-		<main>
+		<S.Container>
 			<h2>Products</h2>
 			<Search data={data} setFilteredData={setFilteredData} />
-			<S.Container>
+			<S.Products>
 				{filteredData.length === 0 ? (
 					<p>No products found. Please try a different query.</p>
 				) : (
@@ -108,9 +103,9 @@ function Products() {
 						</S.Product>
 					))
 				)}
-			</S.Container>
-			<ToastContainer />
-		</main>
+				<ToastContainer />
+			</S.Products>
+		</S.Container>
 	);
 }
 

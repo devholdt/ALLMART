@@ -8,6 +8,11 @@ export const Loader = styled.div`
 `;
 
 export const Container = styled.div`
+	display: flex;
+	flex-direction: column;
+`;
+
+export const Products = styled.div`
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 1em;

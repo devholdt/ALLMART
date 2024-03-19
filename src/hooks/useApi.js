@@ -3,24 +3,27 @@ import { useState, useEffect } from "react";
 export function useApi(url) {
 	const [data, setData] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
-	const [isError, setIsError] = useState(false);
+	const [error, setError] = useState(null);
 
 	useEffect(() => {
 		async function getData() {
 			try {
 				setIsLoading(true);
-				setIsError(false);
+				setError(null);
 
 				const response = await fetch(url);
+
+				if (!response.ok) {
+					throw new Error(`HTTP error! status: ${response.status}`);
+				}
+
 				const json = await response.json();
 
 				setData(json.data);
-				setIsLoading(false);
 			} catch (error) {
 				console.error(error);
 
-				setIsLoading(false);
-				setIsError(true);
+				setError(error.message || "An unknown error occurred");
 			} finally {
 				setIsLoading(false);
 			}
@@ -29,5 +32,5 @@ export function useApi(url) {
 		getData();
 	}, [url]);
 
-	return { data, isLoading, isError };
+	return { data, isLoading, error };
 }

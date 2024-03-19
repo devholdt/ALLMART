@@ -22,7 +22,7 @@ export const theme = {
 		primary: "0 0 5px rgba(201, 246, 111, 0.9)",
 		primaryInset: "inset 0 0 3px rgba(201, 246, 111, 0.9)",
 		white: "0 0 5px rgba(255, 255, 255, 0.1)",
-		black: "0 0 5px rgba(0, 0, 0, 0.1)",
+		black: "0 0 5px rgba(0, 0, 0, 0.2)",
 		red: "0 0 5px rgba(233, 78, 119, 0.9)",
 	},
 	borderRadius: {

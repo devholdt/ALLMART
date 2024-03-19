@@ -11,8 +11,9 @@ import {
 	faPhone,
 	faEnvelope,
 	faEye,
-	faArrowLeft,
+	faChevronLeft,
 	faChevronDown,
+	faRotate,
 	faCartPlus,
 	faTrashAlt,
 	faMinus,
@@ -22,6 +23,7 @@ import {
 	faPlus,
 	faCaretDown,
 	faMagnifyingGlass,
+	faCircleExclamation,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -29,8 +31,9 @@ library.add(
 	faPhone,
 	faEnvelope,
 	faEye,
-	faArrowLeft,
+	faChevronLeft,
 	faChevronDown,
+	faRotate,
 	faCartPlus,
 	faTrashAlt,
 	faMinus,
@@ -39,7 +42,8 @@ library.add(
 	faTimes,
 	faPlus,
 	faCaretDown,
-	faMagnifyingGlass
+	faMagnifyingGlass,
+	faCircleExclamation
 );
 
 const Icon = ({ iconName, color, ...props }) => {
@@ -48,8 +52,9 @@ const Icon = ({ iconName, color, ...props }) => {
 		phone: faPhone,
 		email: faEnvelope,
 		view: faEye,
-		back: faArrowLeft,
+		back: faChevronLeft,
 		down: faChevronDown,
+		refresh: faRotate,
 		addToCart: faCartPlus,
 		trash: faTrashAlt,
 		fullStar: fullStar,
@@ -62,6 +67,7 @@ const Icon = ({ iconName, color, ...props }) => {
 		add: faPlus,
 		caretDown: faCaretDown,
 		search: faMagnifyingGlass,
+		exclamation: faCircleExclamation,
 	};
 
 	const icon = iconMap[iconName];

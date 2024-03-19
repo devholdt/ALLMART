@@ -7,11 +7,12 @@ export const Loader = styled.div`
 	transform: translate(-50%, -50%);
 `;
 
-export const Container = styled.main`
+export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	max-width: 900px;
 	margin: auto;
+	padding: 0 1em;
 
 	h1,
 	h2 {
@@ -152,4 +153,11 @@ export const Review = styled.div`
 	p {
 		margin: 0;
 	}
+`;
+
+export const Error = styled.div`
+	width: fit-content;
+	padding: 0.5em 1.5em;
+	background-color: ${(props) => props.theme.colors.red};
+	color: ${(props) => props.theme.colors.black};
 `;
