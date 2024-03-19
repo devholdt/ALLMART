@@ -16,7 +16,7 @@ import "react-toastify/dist/ReactToastify.css";
 function Product() {
 	const [quantity, setQuantity] = useState(1);
 	let { id } = useParams();
-	const url = `https://v2.api.noroff.dev/online-sho/${id}`;
+	const url = `https://v2.api.noroff.dev/online-shop/${id}`;
 	const { data: product, isLoading, error } = useApi(url);
 	const dispatch = useDispatch();
 
