@@ -1,5 +1,5 @@
 <div align="center">
-   <img src="https://github.com/devholdt/ALLMART/assets/81162745/8f4570c2-3866-4688-ac30-d91275f6642e" width="450">
+   <img src="https://github.com/devholdt/ALLMART/assets/81162745/8f4570c2-3866-4688-ac30-d91275f6642e" alt="allmart logo" width="450">
 </div>
 
 ## About Allmart
@@ -10,8 +10,15 @@
 
 <br/>
 
-![allmart home page](https://github.com/devholdt/ALLMART/assets/81162745/4fc63804-4a7b-4f73-9f9c-a47258712b04)
+<div align="center">
+  
+  [Live site](https://allmart-react.netlify.app/)
 
+</div>
+
+<br/>
+
+![allmart home page](https://github.com/devholdt/ALLMART/assets/81162745/4fc63804-4a7b-4f73-9f9c-a47258712b04)
 
 <br/>
 
@@ -34,7 +41,7 @@
 1. **Clone repository:**
 
 ```bash
-git clone https://github.com/devholdt/ALLMART.git
+git clone https://github.com/devholdt/allmart.git
 cd allmart
 ```
 
