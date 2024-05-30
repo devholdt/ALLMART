@@ -2,6 +2,9 @@
 	"name": "allmart",
 	"version": "0.1.0",
 	"private": true,
+	"engines": {
+		"node": ">=14.0.0"
+	},
 	"dependencies": {
 		"@formkit/auto-animate": "^0.8.1",
 		"@fortawesome/free-regular-svg-icons": "^6.5.1",
