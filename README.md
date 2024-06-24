@@ -1,18 +1,24 @@
 <div align="center">
-   <img src="./src/assets/logo-green.svg" width="450">
+   <img src="https://github.com/devholdt/ALLMART/assets/81162745/8f4570c2-3866-4688-ac30-d91275f6642e" alt="allmart logo" width="450">
 </div>
 
 ## About Allmart
 
 <div align="center">
- Allmart is a responsive e-commerce web application built with `React`, featuring a seamless shopping experience from browsing products to checkout.
+ Allmart is a responsive e-commerce web application built with React, featuring a seamless shopping experience from browsing products to checkout.
 </div>
 
 <br/>
 
-<div style="width: 100%; height: 600px; overflow: hidden; position: relative;">
-    <img src="./src/assets/allmart-home.jpg" alt="Allmart frontpage" style="width: 100%; height: 100%; object-position: top; object-fit: cover;">
+<div align="center">
+  
+  [Live site](https://allmart-react.netlify.app/)
+
 </div>
+
+<br/>
+
+![allmart home page](https://github.com/devholdt/ALLMART/assets/81162745/4fc63804-4a7b-4f73-9f9c-a47258712b04)
 
 <br/>
 
@@ -35,7 +41,7 @@
 1. **Clone repository:**
 
 ```bash
-git clone https://github.com/devholdt/ALLMART.git
+git clone https://github.com/devholdt/allmart.git
 cd allmart
 ```
 
@@ -53,6 +59,6 @@ npm run dev
 
 The application should now be running on http://localhost:3000.
 
-### License
+## License
 
 This project is licensed under the MIT License.
